@@ -1,0 +1,23 @@
+.headerRoot {
+    height: 104px;
+    display: flex;
+    padding: 23px 35px 23px 35px;
+    justify-content: space-between;
+}
+
+.svgIcon {
+    width: 24px;
+}
+
+.brandNameContainer {
+    height: 58px;
+    width: 187px;
+    padding: 13px 0px 13px 0px;
+}
+
+.iconContainer {
+    display: flex;
+    align-items: center;
+    width: 128px;
+    justify-content: space-between;
+}
