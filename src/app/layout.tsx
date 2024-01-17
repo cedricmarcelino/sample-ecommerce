@@ -1,8 +1,9 @@
 import type { Metadata } from 'next'
-import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
+import { AppRouterCacheProvider } from '@mui/material-nextjs/v14-appRouter';
 import { ThemeProvider } from '@mui/material/styles';
 import theme from '@/theme';
 import './globals.css';
+import StoreProvider from '../redux/StoreProvider';
 
 export const metadata: Metadata = {
   title: 'Bandage',
@@ -16,14 +17,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-    <link rel="preconnect" href="https://fonts.googleapis.com"></link>
-    <link rel="preconnect" href="https://fonts.gstatic.com"></link>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"></link>
-      <AppRouterCacheProvider>
-        <ThemeProvider theme={theme}>
-          {children}
-        </ThemeProvider>
-      </AppRouterCacheProvider>
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com"></link>
+        <link rel="preconnect" href="https://fonts.gstatic.com"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"></link>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet"></link>
+      </head>
+      <StoreProvider>
+        <AppRouterCacheProvider>
+          <ThemeProvider theme={theme}>
+            {children}
+          </ThemeProvider>
+        </AppRouterCacheProvider>
+      </StoreProvider>
     </html>
   )
 }
