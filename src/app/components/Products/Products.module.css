@@ -1,0 +1,47 @@
+.productsContainer{
+    padding: 80px 35.5px 80px 35.5px;
+    text-align: center;
+}
+
+.labelContainer{
+    margin-bottom: 24px;
+}
+
+.productsListContainer{
+    padding: 8px 0px 2px 0px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card{
+    width: 290px;
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.cardContent{
+    height: 162px;
+    padding: 25px 25px 35px 25px !important; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cardMedia{
+    height: 360px;
+    object-fit: cover;
+}
+
+.priceContainer{
+    display: flex;
+    justify-content: center;
+}
+
+.originalPrice{
+    margin-right: 5px !important;
+}
+
+.loadButton{
+    width: 260px;
+    height: 52px;
+}
