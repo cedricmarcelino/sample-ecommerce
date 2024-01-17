@@ -1,4 +1,8 @@
-import { Box, Button, Card, CardActions, CardContent, CardMedia, Typography } from "@mui/material";
+import { Box, Typography } from "@mui/material";
+import Card from "@mui/material/Card"
+import CardContent from "@mui/material/CardContent"
+
+
 import styles from './Categories.module.css'
 
 export default function Categories(){
