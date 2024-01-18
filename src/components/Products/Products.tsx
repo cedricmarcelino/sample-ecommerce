@@ -4,35 +4,26 @@ import styles from './Products.module.css'
 import { Product, addProducts } from "@/redux/features/productsSlice";
 import { useAppDispatch } from "@/redux/hooks";
 import { useAppSelector } from "@/redux/hooks";
-import { use } from "react";
+import { useEffect, useState } from "react";
 import Card from "@mui/material/Card"
 import CardContent from "@mui/material/CardContent"
 import CardMedia from "@mui/material/CardMedia"
-
 var _ = require('lodash');
-
-async function getProducts() {
-    const products = await fetch('https://dummyjson.com/products').then((response) => {
-        const data = response.json();
-        return data
-    }).then(({ products }) => {
-        return products
-    }).catch((error) => {
-        console.log(error)
-    }
-    )
-    return products;
-}
 
 export default function Products () {
     const dispatch = useAppDispatch();
-    const products: Product[] = use(getProducts())
-    if(products){
-        for(let index=0; index<=4; index++){
-            dispatch(addProducts([products[index]]))
-        }
-    }
     const sampleProducts = useAppSelector((state) => state.productsReducer.products)
+    const [limit, setLimit] = useState(4)
+    const [total, setTotal] = useState(0)
+    useEffect(() => {
+        fetch(`https://dummyjson.com/products?limit=${limit}`)
+          .then((res) => res.json())
+          .then(({ products, total }) => {
+            dispatch(addProducts(products))
+            setTotal(total)
+          })
+    }, [limit])
+    // const products: Product[] = use(getProducts())
     return (
         <Box className={styles.productsContainer}>
             <Box className={styles.labelContainer}>
@@ -44,7 +35,7 @@ export default function Products () {
                 </Typography>
             </Box>
             <Box className={styles.productsListContainer}>
-                {products ?
+                {sampleProducts.length > 0 ?
                 sampleProducts.map((product,index) => {
                     return (
                         <Card key={index} className={styles.card}>
@@ -56,7 +47,7 @@ export default function Products () {
                             />
                             <CardContent className={styles.cardContent}>
                                 <Typography variant='h5'>
-                                    {product.title}
+                                    {_.startCase(product.title)}
                                 </Typography>
                                 <Typography variant='subtitle2' color='textSecondary'>
                                     {_.startCase(product.category)}
@@ -76,8 +67,8 @@ export default function Products () {
                 <Typography>We are unable to load our products, please try again later.</Typography>
                 }
             </Box>
-            {products && (
-                <Button className={styles.loadButton} variant='outlined' onClick={() => {console.log('Function here')}}>
+            {(sampleProducts.length > 0 && sampleProducts.length < total)  && (
+                <Button className={styles.loadButton} variant='outlined' onClick={() => {setLimit(limit+4); console.log(total)}}>
                     <Typography color='#23A6F0' variant='button'>
                         LOAD MORE PRODUCTS
                     </Typography>

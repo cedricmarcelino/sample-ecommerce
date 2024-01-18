@@ -1,10 +1,13 @@
 'use client';
 import { createTheme } from '@mui/material/styles';
+import { Montserrat } from 'next/font/google'
+
+const montserrat = Montserrat({ subsets: ['latin'] })
 
 const theme = createTheme({
     typography: {
+      fontFamily: montserrat.style.fontFamily,
       h3: {
-        fontFamily: 'Montserrat',
         fontSize: '24px',
         fontStyle: 'normal',
         fontWeight: '700',
@@ -12,7 +15,6 @@ const theme = createTheme({
         letterSpacing: '0.1px',
       },
       h6: {
-        fontFamily: 'Montserrat',
         fontSize: '14px',
         fontStyle: 'normal',
         fontWeight: '700',
@@ -20,7 +22,6 @@ const theme = createTheme({
         letterSpacing: '0.2px',
       },
       subtitle1: {
-        fontFamily: 'Montserrat',
         fontSize: '14px',
         fontStyle: 'normal',
         fontWeight: '400',
@@ -28,7 +29,6 @@ const theme = createTheme({
         letterSpacing: '0.2px',
       },
       subtitle2: {
-        fontFamily: 'Montserrat',
         fontSize: '14px',
         fontStyle: 'normal',
         fontWeight: '700',
@@ -36,7 +36,6 @@ const theme = createTheme({
         letterSpacing: '0.2px',
       },
       h5: {
-        fontFamily: 'Montserrat',
         fontSize: '16px',
         fontStyle: 'normal',
         fontWeight: '700',
@@ -44,7 +43,6 @@ const theme = createTheme({
         letterSpacing: '0.1px',
       },
       button: {
-        fontFamily: 'Montserrat',
         fontSize: '14px',
         fontStyle: 'normal',
         fontWeight: '700',

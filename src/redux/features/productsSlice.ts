@@ -28,7 +28,7 @@ export const products = createSlice({
     initialState,
     reducers: {
         addProducts: (state, action: PayloadAction<Product[]>) => {
-            state.products = [...state.products, ...action.payload]
+            state.products = [...action.payload]
         },
     }
 })
