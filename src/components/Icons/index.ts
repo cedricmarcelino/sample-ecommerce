@@ -1,3 +1,6 @@
 export {default as SearchIcon} from './SearchIcon.svg'
 export {default as CartIcon} from './CartIcon.svg'
 export {default as HamburgerIcon} from './HamburgerIcon.svg'
+export {default as Book} from './Book.svg'
+export {default as BookReader} from './BookReader.svg'
+export {default as Growth} from './Growth.svg'
