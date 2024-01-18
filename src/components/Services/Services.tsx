@@ -36,8 +36,8 @@ export default function Services() {
             <Box className={styles.cardsContainer}>
                 {services.map((service, index) => {
                     return (
-                        <Card className={styles.card}>
-                            <CardContent key={index} className={styles.cardContent}>
+                        <Card key={index} className={styles.card}>
+                            <CardContent className={styles.cardContent}>
                                 {service.icon}
                                 <Typography variant='h3' className={styles.cardTitle}>
                                     {service.title}
