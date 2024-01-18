@@ -6,7 +6,7 @@ export default function Header() {
     return (
         <Box className={styles.headerRoot}>
             <Box className={styles.brandNameContainer}>
-                <Typography variant='h3' color='textPrimary'>Bandage</Typography>
+                <Typography variant='h3'>Bandage</Typography>
             </Box>
             <Box className={styles.iconContainer}>
                 <SearchIcon className={styles.svgIcon}></SearchIcon>
