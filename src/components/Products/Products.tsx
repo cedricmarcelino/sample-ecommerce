@@ -15,15 +15,22 @@ export default function Products () {
     const sampleProducts = useAppSelector((state) => state.productsReducer.products)
     const [limit, setLimit] = useState(4)
     const [total, setTotal] = useState(0)
+    const [isDisabled, setIsDisabled] = useState(false)
+
     useEffect(() => {
         fetch(`https://dummyjson.com/products?limit=${limit}`)
           .then((res) => res.json())
           .then(({ products, total }) => {
             dispatch(addProducts(products))
+            setIsDisabled(false)
             setTotal(total)
           })
     }, [limit])
-    // const products: Product[] = use(getProducts())
+
+    const handleClick = () => {
+        setIsDisabled(true)
+        setLimit(limit+4);
+    }
     return (
         <Box className={styles.productsContainer}>
             <Box className={styles.labelContainer}>
@@ -68,7 +75,7 @@ export default function Products () {
                 }
             </Box>
             {(sampleProducts.length > 0 && sampleProducts.length < total)  && (
-                <Button className={styles.loadButton} variant='outlined' onClick={() => {setLimit(limit+4); console.log(total)}}>
+                <Button disabled={isDisabled} className={styles.loadButton} variant='outlined' onClick={handleClick}>
                     <Typography color='#23A6F0' variant='button'>
                         LOAD MORE PRODUCTS
                     </Typography>
