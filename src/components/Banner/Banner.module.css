@@ -1,0 +1,27 @@
+.bannerContainer{
+    background: url('/assets/images/banner.png'), lightgray 50% / cover no-repeat;
+    text-align: center;
+    padding: 112px 28px;
+    background-position: center;
+}
+
+.button{
+    background-color: #23A6F0 !important;
+    padding: 15px 40px !important;
+}
+
+.subTitle {
+    margin-bottom: 30px !important;
+}
+
+.title {
+    margin-bottom: 30px !important;
+}
+
+.price {
+    margin-bottom: 30px !important;
+}
+
+.content {
+    margin-bottom: 30px !important;
+}

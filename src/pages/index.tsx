@@ -1,3 +1,4 @@
+import Banner from '@/components/Banner/Banner';
 import Layout from '../components/RootLayout/Layout'
 import Categories from '@/components/Categories/Categories';
 import Posts from '@/components/Posts/Posts';
@@ -13,6 +14,7 @@ export default function Page() {
       <Services/>
       <Posts/>
       <Testimonials/>
+      <Banner/>
     </>
   )
 }
