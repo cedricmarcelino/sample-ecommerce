@@ -1,0 +1,23 @@
+.navLink{
+    font-size: 30px !important; 
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 45px !important;
+    letter-spacing: 0.2px!important;
+    color: #737373 !important;
+    margin-bottom: 30px !important;
+}
+
+.navMenu{
+    padding: 60px 0px 98px 0px;
+    width: 100%;
+    position: fixed;
+    top: 104;
+    background-color: white;
+    text-align: center;
+    z-index: 100;
+}
+
+.navLink:last-child{
+    margin-bottom: 0px !important;
+}
