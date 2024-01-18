@@ -34,10 +34,10 @@ export default function Services() {
                 </Typography>
             </Box>
             <Box className={styles.cardsContainer}>
-                {services.map((service) => {
+                {services.map((service, index) => {
                     return (
                         <Card className={styles.card}>
-                            <CardContent className={styles.cardContent}>
+                            <CardContent key={index} className={styles.cardContent}>
                                 {service.icon}
                                 <Typography variant='h3' className={styles.cardTitle}>
                                     {service.title}
