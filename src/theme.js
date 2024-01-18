@@ -48,6 +48,16 @@ const theme = createTheme({
         fontWeight: '700',
         lineHeight: '22px', /* 157.143% */
         letterSpacing: '0.2px',
+      },
+      h4: {
+        fontSize: '20px',
+        fontStyle: 'normal',
+        fontWeight: '400',
+        lineHeight: '30px', /* 150% */
+        letterSpacing: '0.2px',
+      },
+      allVariants: {
+        color: '#252B42'
       }
     },
     palette: {
@@ -72,7 +82,7 @@ const theme = createTheme({
           }
         }
       }
-    }
+    },
   });
   
 export default theme;
