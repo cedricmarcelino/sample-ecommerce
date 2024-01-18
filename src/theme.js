@@ -11,49 +11,63 @@ const theme = createTheme({
         fontSize: '24px',
         fontStyle: 'normal',
         fontWeight: '700',
-        lineHeight: '32px', /* 133.333% */
+        lineHeight: '32px',
         letterSpacing: '0.1px',
       },
       h6: {
         fontSize: '14px',
         fontStyle: 'normal',
         fontWeight: '700',
-        lineHeight: '24px', /* 171.429% */
+        lineHeight: '24px',
         letterSpacing: '0.2px',
       },
       subtitle1: {
         fontSize: '14px',
         fontStyle: 'normal',
         fontWeight: '400',
-        lineHeight: '20px', /* 142.857% */
+        lineHeight: '20px',
         letterSpacing: '0.2px',
       },
       subtitle2: {
         fontSize: '14px',
         fontStyle: 'normal',
         fontWeight: '700',
-        lineHeight: '24px', /* 171.429% */
+        lineHeight: '24px',
         letterSpacing: '0.2px',
       },
       h5: {
         fontSize: '16px',
         fontStyle: 'normal',
         fontWeight: '700',
-        lineHeight: '24px', /* 150% */
+        lineHeight: '24px',
         letterSpacing: '0.1px',
       },
       button: {
         fontSize: '14px',
         fontStyle: 'normal',
         fontWeight: '700',
-        lineHeight: '22px', /* 157.143% */
+        lineHeight: '22px',
         letterSpacing: '0.2px',
       },
       h4: {
         fontSize: '20px',
         fontStyle: 'normal',
         fontWeight: '400',
-        lineHeight: '30px', /* 150% */
+        lineHeight: '30px',
+        letterSpacing: '0.2px',
+      },
+      h2: {
+        fontSize: '40px',
+        fontStyle: 'normal',
+        fontWeight: '700',
+        lineHeight: '50px',
+        letterSpacing: '0.2px',
+      },
+      caption: {
+        fontSize: '12px',
+        fontStyle: 'normal',
+        fontWeight: '400',
+        lineHeight: '16px',
         letterSpacing: '0.2px',
       },
       allVariants: {
