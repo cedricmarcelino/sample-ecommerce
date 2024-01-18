@@ -95,6 +95,25 @@ const theme = createTheme({
             padding: '0px',
           }
         }
+      },
+      MuiOutlinedInput: {
+        styleOverrides:{
+          root: {
+            paddingRight: '0px',
+          }
+        }
+      },
+      MuiInputLabel: {
+        styleOverrides:{
+          root: {
+            fontSize: '14px',
+            fontStyle: 'normal',
+            fontWeight: '400',
+            lineHeight: '28px',
+            letterSpacing: '0.2px',
+            color: '#737373'
+          }
+        }
       }
     },
   });
