@@ -3,6 +3,7 @@ import Categories from '@/components/Categories/Categories';
 import Posts from '@/components/Posts/Posts';
 import Products from '@/components/Products/Products';
 import Services from '@/components/Services/Services';
+import Testimonials from '@/components/Testimonies/Testimonials';
  
 export default function Page() {
   return (
@@ -11,6 +12,7 @@ export default function Page() {
       <Products/>
       <Services/>
       <Posts/>
+      <Testimonials/>
     </>
   )
 }
