@@ -1,12 +1,10 @@
 import { Box, Typography } from "@mui/material";
 import Card from "@mui/material/Card"
 import CardContent from "@mui/material/CardContent"
-
-
 import styles from './Categories.module.css'
+import { imagesDirectory } from "@/constants";
 
 export default function Categories(){
-    const imagesDirectory = '../../../../assets/images/'
     const cardContents = [
         {
             items: 12,
