@@ -4,7 +4,7 @@ import Categories from '@/components/Categories/Categories';
 import Posts from '@/components/Posts/Posts';
 import Products from '@/components/Products/Products';
 import Services from '@/components/Services/Services';
-import Testimonials from '@/components/Testimonies/Testimonials';
+import Testimonials from '@/components/Testimonials/Testimonials';
  
 export default function Page() {
   return (
