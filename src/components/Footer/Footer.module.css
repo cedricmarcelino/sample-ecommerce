@@ -1,0 +1,89 @@
+.icon{
+    width: 24px;
+    margin-right: 20px;
+}
+
+.licenseContent{
+    text-align: center;
+    padding: 0px 46.5px;
+}
+
+.licenseContainer{
+    padding: 25px 46.5px;
+    background-color: #FAFAFA;
+}
+
+.brandContainer{
+    padding: 40px 46.5px;
+    background-color: #FAFAFA;
+}
+
+.socialIcons{
+    margin-top: 11.5px;
+}
+
+.brandName{
+    padding: 13px 0px;
+}
+
+.categoriesContainer{
+    padding: 70px 46.5px;
+    padding-bottom: 0px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.categoryContainer{
+    width: 152px;
+    margin-bottom: 30px;
+    margin-right: 10px;
+}
+
+.categoryLabel{
+    margin-bottom: 20px !important;
+}
+
+.link{
+    margin-bottom: 10px !important;
+}
+
+.link:last-child{
+    margin-bottom: 0px !important;
+}
+
+.contactContainer{
+    padding: 0px 46.5px 70px 46.5px;
+}
+
+.emailField{
+    width: 321px;
+    margin-top: 20px !important;
+}
+
+.subscribeButton{
+    background-color: #23A6F0 !important;
+    height: 56px;
+    width: 117px;
+    border-top-left-radius: 0px !important;
+    border-bottom-left-radius: 0px !important;
+}
+
+.buttonText {
+    color: #FFF !important;
+    font-size: 14px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 28px !important; /* 200% */
+    letter-spacing: 0.2px !important;
+    text-transform: capitalize !important;
+}
+
+.textFieldLabel {
+    font-size: 12px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 28px !important;
+    letter-spacing: 0.2px !important;
+    
+}
