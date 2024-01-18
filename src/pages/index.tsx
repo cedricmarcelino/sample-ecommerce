@@ -14,9 +14,9 @@ export default function Page() {
 Page.getLayout = function getLayout(page: React.ReactNode) {
   return (
   <>
-         <Layout>
-              {page}
-          </Layout>
+    <Layout>
+        {page}
+    </Layout>
   </>
   )
 }
