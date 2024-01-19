@@ -2,6 +2,10 @@
     padding: 80px 42.5px 50px 43.5px;
 }
 
+.labelContainer :global(.MuiTypography-root):first-child {
+    margin-bottom: 10px;
+}
+
 .labelContainer {
     margin-bottom: 80px;
     text-align: center;
@@ -52,4 +56,16 @@
 .postsContainer {
     display: flex;
     flex-wrap: wrap;
+}
+
+@media screen and (min-width: 1440px) {
+    .container {
+        width: 1064px;
+        margin: auto;
+        padding: 112px 0px;
+    }
+    .card {
+        width: 348px;
+        margin-bottom: 0px;
+    }
 }
