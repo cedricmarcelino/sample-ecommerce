@@ -5,9 +5,14 @@ import { SearchIcon, CartIcon, HamburgerIcon, Close, Envelope, Phone, Youtube, F
 import { useState } from "react"
 import Navigation from "../Navigation/Navigation"
 import React from "react"
+import { useRouter } from "next/navigation";
 
 export default function Header() {
     const [isVisible, setIsVisible] = useState(false)
+    const router = useRouter()
+    const handleBrandClick = () => {
+        router.push('/');
+    }
 
     const handleClick = () => {
         setIsVisible(!isVisible)
@@ -45,7 +50,7 @@ export default function Header() {
             </Box>
         </Box>
         <Box className={styles.headerRoot}>
-            <Box className={styles.brandNameContainer}>
+            <Box className={styles.brandNameContainer} onClick={handleBrandClick}>
                 <Typography variant='h3'>Bandage</Typography>
             </Box>
             <Box className={styles.actionsContainer}>
