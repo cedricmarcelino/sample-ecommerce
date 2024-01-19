@@ -46,6 +46,9 @@ export default function Products () {
     return (
         <Box className={styles.productsContainer}>
             <Box className={styles.labelContainer}>
+                <Typography variant='h4' color='textSecondary' className={styles.featuredLabel}>
+                    Featured Products
+                </Typography>
                 <Typography variant='h3'>
                     BESTSELLER PRODUCTS
                 </Typography>

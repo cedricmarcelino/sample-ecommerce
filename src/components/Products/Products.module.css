@@ -45,3 +45,46 @@
     width: 260px;
     height: 52px;
 }
+.featuredLabel {
+    display: none;
+}
+.labelContainer :global(.MuiTypography-root) {
+    margin-bottom: 10px;
+}
+.labelContainer :global(.MuiTypography-root):last-child {
+    margin-bottom: 0px;
+}
+
+@media screen and (min-width: 1440px) {
+    .productsContainer{
+        padding: 80px 0px;
+        text-align: center;
+        width: 1124px;
+        margin: auto;
+    }
+    .featuredLabel {
+        display: block;
+    }
+    .productsListContainer{
+        padding: 36px 44.5px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-bottom: 24px;
+    }
+    .card{
+        width: 183px;
+        margin: 0px;
+        margin-right: 30px;
+        margin-bottom: 15px;
+    }
+    .card:nth-child(5n){
+        margin-right: 0px;
+    }
+    .card:nth-last-child(-n+5){
+        margin-bottom: 0px;
+    }
+
+    .cardMedia{
+        height: 238px;
+    }
+}
