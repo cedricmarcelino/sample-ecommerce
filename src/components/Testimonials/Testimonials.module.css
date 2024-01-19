@@ -1,5 +1,6 @@
 .testimonialsContainer{
-    background: #FAFAFA;display: flex;
+    background: #FAFAFA;
+    display: flex;
     padding: 55px 28px 40.8px 28px;
     flex-direction: column;
     justify-content: flex-end;
@@ -45,4 +46,30 @@
     flex-wrap: wrap;
     width: 358px;
     margin-bottom: 23px;
+}
+
+@media screen and (min-width: 1440px) { 
+    .testimonialsContainer{
+        width: 1128px;
+        margin: 80px auto;
+        background-color: white;
+        padding: 48px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+    .testimonial {
+        width: 446px;
+        margin-bottom: 0px;
+        padding: 0px;
+    }
+    .imagesContainer :global(img){
+        width: 142.77px;
+        height: 142.77px;
+    }
+
+    .imagesContainer{
+        width: 464.1px;
+        margin-bottom: 0px;
+    }
 }
