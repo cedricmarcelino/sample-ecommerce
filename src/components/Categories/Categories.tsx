@@ -36,7 +36,7 @@ export default function Categories(){
                             <Typography variant='h6' className={styles.item}>
                                 {content.items} items
                             </Typography>
-                            <Typography variant='h3'>
+                            <Typography variant='h3' className={styles.label}>
                                 {content.label}
                             </Typography>
                             <Typography variant='h6'>
