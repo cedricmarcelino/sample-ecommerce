@@ -22,8 +22,6 @@ export default function Products () {
     }
 
     useEffect(() => {
-        const width = checkWidth();
-        const initialLimit = (width<1440) ? 5 : 10
         if(limit != 0){
             fetch(`https://dummyjson.com/products?limit=${limit}`)
               .then((res) => res.json())
@@ -33,6 +31,8 @@ export default function Products () {
                 setTotal(total)
               })
         } else {
+            const width = checkWidth();
+            const initialLimit = (width<1440) ? 5 : 10
             setLimit(initialLimit);
         }
     }, [limit])
