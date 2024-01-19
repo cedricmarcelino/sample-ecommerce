@@ -34,3 +34,19 @@
 .cardTitle {
     margin-bottom: 20px !important;
 }
+
+@media screen and (min-width: 1440px) {
+    .servicesContainer {
+        padding-left: 0px;
+        padding-right: 0px;
+        width: 1050px;
+        margin: auto;
+        padding-bottom: 96px;
+    }
+    .card {
+        margin: 0px;
+    }
+    .cardsContainer {
+        justify-content: space-between;
+    }
+}
