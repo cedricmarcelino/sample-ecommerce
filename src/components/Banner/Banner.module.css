@@ -1,5 +1,7 @@
 .bannerContainer{
-    background: url('/assets/images/banner.png'), lightgray 50% / cover no-repeat;
+    background-image: url('/assets/images/banner.png');
+    background-repeat: no-repeat;
+    background-size: cover;
     text-align: center;
     padding: 112px 28px;
     background-position: center;
@@ -24,4 +26,15 @@
 
 .content {
     margin-bottom: 30px !important;
+}
+
+@media screen and (min-width: 1440px) {
+    .bannerContainer{
+        padding: 0px;
+    }
+    .contentContainer{
+        width: 571px;
+        padding: 136px 0px;
+        margin: auto;
+    }
 }
