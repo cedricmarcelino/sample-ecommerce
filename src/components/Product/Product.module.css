@@ -1,0 +1,161 @@
+.productContainer {
+    margin-top: 104px;
+    background-color: #FAFAFA;
+}
+
+.errorFetching{
+    margin-top: 104px;
+}
+
+.photosContainer {
+    width: 348px;
+    height: 394px;
+    margin-bottom: 30px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.mainImage {
+    width: 348px;
+    height: 277px;
+    position: relative;
+    margin-bottom: 42px;
+}
+.mainImage :global(path){
+    fill: #252B42;
+}
+#right-chevron-image-navigation{
+    width: 24px;
+    height: 44px;
+    position: absolute;
+    top: 119px;
+    right: 35px;
+}
+#left-chevron-image-navigation{
+    width: 24px;
+    height: 44px;
+    position: absolute;
+    transform: rotate(180deg);
+    top: 119px;
+    left: 35px;
+}
+.breadCrumbs {
+    padding: 24px 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.breadCrumbs > * {
+    margin-right: 15px !important
+}
+
+.breadCrumbs:last-child{
+    margin-right: 0px !important
+}
+
+.breadCrumbs :global(path){
+    fill: #BDBDBD;
+}
+
+.breadCrumbs :global(svg){
+    width: 7px;
+    height: 12px;
+}
+
+.product {
+    padding: 48px 33px;
+    margin: auto;
+    display: flex;
+    padding-bottom: 158px;
+    flex-wrap: wrap;
+}
+
+.productMetadata {
+    padding: 11px 25px 24px 25px;
+    width: 348px;
+    margin: auto;
+}
+
+.divider {
+    width: 283px;
+}
+
+.productMetadata :global(.MuiDivider-root){
+    margin-top: 16px;
+    margin-bottom: 19px;
+}
+
+.color {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.color:last-child {
+    margin-right: 0px;
+}
+
+.colorsContainer {
+    display: flex;
+    margin-bottom: 48px;
+}
+
+.buttonsContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.selectButton {
+    width: 148px !important;
+    height: 44px !important;
+    border-radius: 5px !important;
+    background-color: #23A6F0 !important;
+}
+
+.iconButton {
+    min-width: 0px !important;
+    width: 40px;
+    height: 40px;
+    border-radius: 50% !important;
+    padding: 0px !important;
+    background-color: white !important;
+}
+
+.iconButton path {
+    fill: #252B42 !important;
+}
+
+.buttonsContainer :global(.MuiTypography-root) {
+    text-transform: capitalize;
+}
+
+.ratingContainer{
+    display: flex;
+    align-items: center;
+}
+
+.ratingContainer :global(.MuiRating-iconFilled) {
+    color: #F3CD03;
+}
+
+.ratingContainer :global(.MuiRating-root) {
+    margin-right: 10px;
+    margin-top: 12px;
+    margin-bottom: 20px;
+}
+
+.stockContainer {
+    margin-top: 5px;
+    margin-bottom: 32px;
+    display: flex;
+    white-space: pre-wrap;
+}
+
+.subImage {
+    width: 100px;
+    height: 75px;
+    margin-right: 19px;
+}
