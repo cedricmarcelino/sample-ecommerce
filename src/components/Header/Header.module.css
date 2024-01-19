@@ -13,6 +13,26 @@
 .svgIcon {
     width: 24px;
 }
+.cartContainer {
+    display: flex;
+    align-items: center;
+}
+.cartIcon {
+    width: 24px;
+    margin-right: 5px;
+}
+
+.hamburgerIcon {
+    width: 24px;
+}
+
+.closeIcon {
+    width: 24px;
+}
+
+.loginContainer {
+    display: none;
+}
 
 .brandNameContainer {
     height: 58px;
@@ -23,6 +43,135 @@
 .iconContainer {
     display: flex;
     align-items: center;
-    width: 128px;
+    width: 155px;
     justify-content: space-between;
+}
+
+.headerBanner {
+    display: none;
+}
+
+.actionsContainer{
+    display: flex;
+    align-items: center;
+}
+
+.favoritesContainer {
+    display: none;
+}
+
+@media screen and (min-width: 1440px){
+    .userIcon{
+        width: 12px;
+        margin-right: 5px;
+    }
+    .loginContainer{
+        display: flex;
+        padding: 15px;
+    }
+    .cartContainer {
+        margin: 15px;
+    }
+    .favoritesContainer {
+        display: flex;
+        align-items: center;
+        margin: 15px;
+    }
+    .cartIcon {
+        width: 16px;
+        margin-right: 5px;
+    }
+    .iconContainer {
+        justify-content: end;
+        width: auto;
+    }
+    .iconContainer :global(path) {
+        fill: #23A6F0;
+    }
+    .iconContainer :global(.MuiTypography-caption) {
+        color: #23A6F0;
+    }
+    .hamburgerIcon {
+        display: none;
+    }
+    
+    .closeIcon {
+        display: none;
+    }
+
+    .heartIcon {
+        width: 16px;
+        margin-right: 5px;
+    }
+    
+    .svgIcon {
+        width: 16px;
+        margin: 15px;
+    }
+
+    .brandNameContainer {display: flex;
+        height: auto;
+        padding: 13px 79px 13px 0px;
+        width: auto;
+    }
+    .headerBanner {
+        display: flex;
+        background-color: #23856D;
+        padding: 9px 26px 3px 26px;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 12px;
+    }
+    .headerRoot {
+        position: static;
+        padding: 0px 17px 0px 38px;
+        height: auto;
+    }
+
+    .contactNumberContainer {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        margin-right: 10px;
+    }
+
+    .emailContainer{
+        display: flex;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .contactsContainer {
+        display: flex;
+    }
+
+    .socialsContainer {
+        display: flex;
+        padding: 10px;
+    }
+
+    .phoneIcon {
+        margin-right: 5px;
+    }
+
+    .envelopeIcon {
+        margin-right: 5px;
+    }
+
+    .socialsIconContainer {
+        margin-left: 10px;
+    }
+
+    .socialsIcon {
+        margin: 5px;
+    }
+
+    .socialsIcon path {
+        fill: #FFFFFF;
+    }
+    .actionsContainer{
+        flex-grow: 1;
+        margin-left: 40px;
+        justify-content: space-between;
+    }
 }

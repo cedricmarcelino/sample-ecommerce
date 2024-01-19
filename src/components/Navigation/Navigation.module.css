@@ -10,14 +10,46 @@
 
 .navMenu{
     padding: 60px 0px 98px 0px;
-    width: 100%;
+    width: 100vw;
     position: fixed;
-    top: 104;
+    top: 104px;
+    left: 0px;
     background-color: white;
     text-align: center;
     z-index: 100;
 }
 
+.navMenuDesktop {
+    display: none;
+}
+
 .navLink:last-child{
     margin-bottom: 0px !important;
+}
+
+@media screen and (min-width: 1440px){ 
+    .navMenu{
+        display: none;
+    }
+    .navMenuDesktop {
+        display: flex;
+        align-items: center;
+    }
+    .shopContainer {
+        display: flex;
+        align-items: center;
+        margin-left: 15px;
+    }
+    .navMenuDesktop :global(.MuiTypography-root) {
+        margin-left: 15px;
+    }
+    .navMenuDesktop :global(.MuiTypography-root):first-child{
+        margin-left: 0px;
+    }
+    .shopContainer :global(.MuiTypography-root){
+        margin-right: 9px;
+    }
+    .shopContainer path {
+        fill: #737373;
+    }
 }
