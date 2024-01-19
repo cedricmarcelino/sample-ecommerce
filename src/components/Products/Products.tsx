@@ -4,7 +4,7 @@ import styles from './Products.module.css'
 import { Product, addProducts } from "@/redux/features/productsSlice";
 import { useAppDispatch } from "@/redux/hooks";
 import { useAppSelector } from "@/redux/hooks";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useLayoutEffect} from "react";
 import Card from "@mui/material/Card"
 import CardContent from "@mui/material/CardContent"
 import CardMedia from "@mui/material/CardMedia"
@@ -13,23 +13,44 @@ var _ = require('lodash');
 export default function Products () {
     const dispatch = useAppDispatch();
     const sampleProducts = useAppSelector((state) => state.productsReducer.products)
-    const [limit, setLimit] = useState(4)
+    const [limit, setLimit] = useState(0)
     const [total, setTotal] = useState(0)
     const [isDisabled, setIsDisabled] = useState(false)
 
+    const checkWidth = () => {
+        return window.innerWidth;
+    }
+
     useEffect(() => {
-        fetch(`https://dummyjson.com/products?limit=${limit}`)
-          .then((res) => res.json())
-          .then(({ products, total }) => {
-            dispatch(addProducts(products))
-            setIsDisabled(false)
-            setTotal(total)
-          })
+        window.addEventListener('resize', checkWidth)
+        console.log('Resize event listener attached.')
+        return (() => {
+            console.log('Resize event listener removed.')
+            return (window.removeEventListener('resize', checkWidth))
+        });
+    }, [])
+
+    useEffect(() => {
+        const width = checkWidth();
+        const initialLimit = (width<1440) ? 5 : 10
+        if(limit != 0){
+            fetch(`https://dummyjson.com/products?limit=${limit}`)
+              .then((res) => res.json())
+              .then(({ products, total }) => {
+                dispatch(addProducts(products))
+                setIsDisabled(false)
+                setTotal(total)
+              })
+        } else {
+            setLimit(initialLimit);
+        }
     }, [limit])
 
     const handleClick = () => {
+        const width = checkWidth();
+        const limitIncrement = (width<1440) ? 5 : 10
         setIsDisabled(true)
-        setLimit(limit+4);
+        setLimit(limit+limitIncrement);
     }
     return (
         <Box className={styles.productsContainer}>
