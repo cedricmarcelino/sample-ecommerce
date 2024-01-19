@@ -35,6 +35,14 @@
     margin-bottom: 20px !important;
 }
 
+.servicesLabel :global(.MuiTypography-root) {
+    margin-bottom: 10px;
+}
+
+.servicesLabel :global(.MuiTypography-root):last-child {
+    margin-bottom: 0px;
+}
+
 @media screen and (min-width: 1440px) {
     .servicesContainer {
         padding-left: 0px;
