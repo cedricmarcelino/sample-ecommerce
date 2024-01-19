@@ -87,3 +87,51 @@
     letter-spacing: 0.2px !important;
     
 }
+
+@media screen and (min-width: 1440px){
+    .brandContainer{
+        display: flex;
+        justify-content: space-between;
+        padding: 40px 195px
+    }
+
+    .socialIcons{
+        margin-top: 0px;
+        align-items: center;
+        display: flex;
+    }
+
+    .contactContainerWrapper{
+        width: 1050px;
+        margin: auto;
+        padding: 50px 0px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .contactContainer{
+        padding: 0px;
+    }
+
+    .categoriesContainer{
+        padding: 0px;
+    }
+
+    .categoryContainer{
+        margin: 0px;
+        margin-right: 30px;
+    }
+
+    .categoryContainer:last-child{
+        margin-right: 0px;
+    }
+
+    .licenseContentWrapper{
+        margin: auto;
+        width: 1050px;
+    }
+    .licenseContent{
+        text-align: left;
+        padding: 0px;
+    }
+}
