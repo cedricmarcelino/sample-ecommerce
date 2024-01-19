@@ -22,15 +22,6 @@ export default function Products () {
     }
 
     useEffect(() => {
-        window.addEventListener('resize', checkWidth)
-        console.log('Resize event listener attached.')
-        return (() => {
-            console.log('Resize event listener removed.')
-            return (window.removeEventListener('resize', checkWidth))
-        });
-    }, [])
-
-    useEffect(() => {
         const width = checkWidth();
         const initialLimit = (width<1440) ? 5 : 10
         if(limit != 0){
