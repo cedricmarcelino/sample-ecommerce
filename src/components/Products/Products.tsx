@@ -1,13 +1,14 @@
 'use client'
 import { Box, Typography, Button } from "@mui/material";
 import styles from './Products.module.css'
-import { Product, addProducts } from "@/redux/features/productsSlice";
+import { addProducts } from "@/redux/features/productsSlice";
 import { useAppDispatch } from "@/redux/hooks";
 import { useAppSelector } from "@/redux/hooks";
-import { useEffect, useState, useLayoutEffect} from "react";
+import { useEffect, useState} from "react";
 import Card from "@mui/material/Card"
 import CardContent from "@mui/material/CardContent"
 import CardMedia from "@mui/material/CardMedia"
+import { useRouter } from "next/navigation";
 var _ = require('lodash');
 
 export default function Products () {
@@ -16,10 +17,15 @@ export default function Products () {
     const [limit, setLimit] = useState(0)
     const [total, setTotal] = useState(0)
     const [isDisabled, setIsDisabled] = useState(false)
+    const router = useRouter();
 
     const checkWidth = () => {
         return window.innerWidth;
     }
+
+    const handleNavigate = (id: string | number) => {
+        router.push(`/product/${id}`);
+    };
 
     useEffect(() => {
         if(limit != 0){
@@ -35,7 +41,7 @@ export default function Products () {
             const initialLimit = (width<1440) ? 5 : 10
             setLimit(initialLimit);
         }
-    }, [limit])
+    }, [limit, dispatch])
 
     const handleClick = () => {
         const width = checkWidth();
@@ -60,7 +66,9 @@ export default function Products () {
                 {sampleProducts.length > 0 ?
                 sampleProducts.map((product,index) => {
                     return (
-                        <Card key={index} className={styles.card}>
+                        <Card key={index} className={styles.card} onClick={() => {
+                            handleNavigate(product.id)
+                        }}>
                             <CardMedia
                                 component='img'
                                 image={product.images[0]}
