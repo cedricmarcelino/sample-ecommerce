@@ -1,6 +1,6 @@
-import { Box, Typography, TextField, InputAdornment, Button } from "@mui/material"
+import { Box, Typography, TextField, InputAdornment, Button, Divider } from "@mui/material"
 import styles from './Footer.module.css'
-import { Facebook, Twitter, Instagram } from "../Icons"
+import { Facebook, Twitter, Instagram, } from "../Icons"
 
 export default function Footer() {
     const actionCategory = [
@@ -42,7 +42,7 @@ export default function Footer() {
         },
     ]
     return (
-        <Box >
+        <Box className={styles.footerContainer}>
             <Box className={styles.brandContainer}>
                 <Typography variant='h3' className={styles.brandName}>
                     Bandage
@@ -53,7 +53,7 @@ export default function Footer() {
                     <Twitter className={styles.icon}/>
                 </Box>
             </Box>
-            
+            <Divider className={styles.divider}/>
             <Box className={styles.contactContainerWrapper}>
                 <Box className={styles.categoriesContainer}>
                     {actionCategory.map((category, index) => {

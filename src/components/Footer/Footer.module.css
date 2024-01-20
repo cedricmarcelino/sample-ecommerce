@@ -15,7 +15,6 @@
 
 .brandContainer{
     padding: 40px 46.5px;
-    background-color: #FAFAFA;
 }
 
 .socialIcons{
@@ -88,11 +87,17 @@
     
 }
 
+.divider{
+    display: none;
+}
+
 @media screen and (min-width: 1440px){
     .brandContainer{
         display: flex;
         justify-content: space-between;
-        padding: 40px 195px
+        width: 1050px;
+        margin: auto;
+        padding: 40px 0px;
     }
 
     .socialIcons{
@@ -133,5 +138,10 @@
     .licenseContent{
         text-align: left;
         padding: 0px;
+    }
+    .footerContainer :global(.MuiDivider-root){
+        display: block;
+        margin: auto;
+        width: 1057px;
     }
 }
