@@ -30,6 +30,7 @@
     position: absolute;
     top: 119px;
     right: 35px;
+    cursor: pointer;
 }
 #left-chevron-image-navigation{
     width: 24px;
@@ -38,6 +39,7 @@
     transform: rotate(180deg);
     top: 119px;
     left: 35px;
+    cursor: pointer;
 }
 .breadCrumbs {
     padding: 24px 0px;

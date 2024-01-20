@@ -52,6 +52,7 @@
         height: auto;
         padding: 13px 79px 13px 0px;
         width: auto;
+        cursor: pointer;
     }
     .headerBanner {
         display: flex;

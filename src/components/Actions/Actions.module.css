@@ -18,6 +18,7 @@
 .cartContainer {
     display: flex;
     align-items: center;
+    cursor: pointer;
 }
 .cartIcon {
     width: 24px;
@@ -30,9 +31,11 @@
 
 .closeIcon {
     width: 24px;
+    cursor: pointer;
 }
 .hamburgerIcon {
     width: 24px;
+    cursor: pointer;
 }
 .wishlistContainer {
     display: none;
@@ -59,6 +62,7 @@
     .heartIcon {
         width: 16px;
         margin-right: 5px;
+        cursor: pointer;
     }
     .cartIcon {
         width: 16px;
