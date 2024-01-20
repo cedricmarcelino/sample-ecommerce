@@ -8,6 +8,10 @@ import Image from 'next/image'
 import { useEffect, useState } from "react"
 import Products from "../Products/Products"
 import { usePathname } from "next/navigation"
+import { useAppDispatch, useAppSelector } from "@/redux/hooks"
+import { CartContent, SNACKBAR_TYPES } from "@/types/types"
+import { setCart } from "@/redux/features/cartSlice"
+import { openSnackbar } from "@/redux/features/snackbarSlice"
 var _ = require('lodash');
 
 
@@ -16,6 +20,8 @@ interface Props {
 }
 
 export const Product: React.FC<Props> = ({ product }) => {
+    const dispatch = useAppDispatch();
+    const cart: CartContent[] = useAppSelector((state) => state.cartReducer.cart.cartContents)
     const colors = [
         '#23A6F0',
         '#2DC071',
@@ -44,6 +50,38 @@ export const Product: React.FC<Props> = ({ product }) => {
             setImageIndex(2)
         } else {
             setImageIndex(imageIndex-1)
+        }
+    }
+
+    const isItemAddedToCart = () => {
+        if(cart.findIndex((cartContent) => cartContent.id === product?.id) < 0) {
+            return false
+        }
+        return true
+    }
+
+    const handleCart = () => {
+        const tempCart: CartContent[] = _.cloneDeep(cart);
+        if(!isItemAddedToCart()){
+            const tempProduct: CartContent = _.cloneDeep(product)
+            tempProduct.count = 1;
+            tempCart.push(tempProduct);
+            dispatch(setCart({ cartContents: tempCart }))
+            dispatch(openSnackbar(
+                {
+                    isOpen: true,
+                    message: 'Product was added to your cart.',
+                    type: SNACKBAR_TYPES.SUCCESS,
+                }
+            ))
+        } else {
+            dispatch(openSnackbar(
+                {
+                    isOpen: true,
+                    message: 'This product is already in your cart.',
+                    type: SNACKBAR_TYPES.INFO,
+                }
+            ))
         }
     }
 
@@ -133,10 +171,10 @@ export const Product: React.FC<Props> = ({ product }) => {
                                 <Button variant='contained' className={styles.iconButton}>
                                     <Heart width={20}/>
                                 </Button>
-                                <Button variant='contained'className={styles.iconButton}>
+                                <Button variant='contained' className={styles.iconButton} onClick={handleCart}>
                                     <CartIcon width={20}/>
                                 </Button>
-                                <Button variant='contained'className={styles.iconButton}>
+                                <Button variant='contained' className={styles.iconButton}>
                                     <Eye width={20}/>
                                 </Button>
                             </Box>

@@ -1,0 +1,81 @@
+.cartContainer {
+    margin-top: 104px;
+    min-height: calc(100vh - 104px);
+    padding: 0px 18px 83px 18px;
+}
+
+.cartLabel {
+    text-align: center;
+}
+
+.cartContentsContainer {
+    margin-top: 36px;
+}
+
+.iconButton {
+    min-width: 0px !important;
+    width: 20px;
+    height: 20px;
+    border-radius: 50% !important;
+    padding: 0px !important;
+    background-color: white !important;
+}
+
+.iconButton path {
+    fill: #252B42 !important;
+}
+
+.counterContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.counterContainer > * {
+    margin-right: 8px !important;
+}
+
+.productContentContainer > * {
+    margin-bottom: 8px !important;
+}
+
+.productContentContainer{
+    margin-left: 8px;
+    width: 200px;
+    text-align: center;
+}
+
+.productContainer {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    margin-bottom: 30px;
+    max-width: 700px;
+}
+
+.cartContentsContainer :global(.MuiDivider-root){
+    margin: auto;
+    margin-bottom: 30px;
+    max-width: 700px;
+}
+
+.totalContainer {
+    display: flex;
+    white-space: pre-wrap;
+    justify-content: center;
+}
+
+.counterContainer :global(.Mui-disabled) {
+    background-color: #f1f1f1 !important;
+}
+
+.noProductsContainer {
+    margin-top: 36px;
+}
+@media screen and (min-width: 1440px){
+    .cartContainer {
+        margin-top: 50px;
+        min-height: 0px;
+        padding: 0px 18px 83px 18px;
+    }
+}
