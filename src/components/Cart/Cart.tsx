@@ -1,7 +1,6 @@
 import { Box, Typography, Button, Divider } from "@mui/material";
 import styles from './Cart.module.css'
-import { setLocalStorage } from "@/utilities/utilities";
-import { CartContent, LOCAL_STORAGE_KEYS } from "@/types/types";
+import { CartContent } from "@/types/types";
 import Image from 'next/image';
 import { Minus, Plus } from "../Icons";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
