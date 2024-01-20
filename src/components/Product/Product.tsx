@@ -6,6 +6,7 @@ import { Chevron, Heart, CartIcon, Eye } from "../Icons"
 import Sponsors from "../Sponsors/Sponsors"
 import Image from 'next/image'
 import { useState } from "react"
+import Products from "../Products/Products"
 var _ = require('lodash');
 
 
@@ -59,6 +60,7 @@ export const Product: React.FC<Props> = ({ product }) => {
                                     alt={`product-thumbnail-${imageIndex}`}
                                     width={348}
                                     height={277}
+                                    className={styles.mainImage}
                                 />
                                 {productImages.length > 1 &&
                                 <>
@@ -69,22 +71,20 @@ export const Product: React.FC<Props> = ({ product }) => {
                             </Box>
                             {productImages.length > 1 && 
                                 <>
-                                <Box className={styles.subImage}>
                                     <Image 
                                         src={productImages[(imageIndex+1 != 3 ? imageIndex+1 : 0)]} 
                                         alt={`product-thumbnail-${imageIndex}`}
                                         width={100}
                                         height={75}
+                                        className={styles.subImage}
                                     />
-                                </Box>
-                                <Box className={styles.subImage}>
                                     <Image 
                                         src={productImages[(imageIndex+2 < 3 ? imageIndex+2 : imageIndex+2-3)]} 
                                         alt={`product-thumbnail-${imageIndex}`}
                                         width={100}
                                         height={75}
+                                        className={styles.subImage}
                                     />
-                                </Box>
                                 </>
                             }
                         </Box>
@@ -134,6 +134,45 @@ export const Product: React.FC<Props> = ({ product }) => {
                             </Box>
                         </Box>
                     </Box>
+                </Box>
+                <Box className={styles.productDetailsContainer}>
+                    <Box className={styles.productDetailsActionBar}>
+                        <Typography color='textSecondary'>Description</Typography>
+                        <Typography color='textSecondary'>Additional Information</Typography>
+                        <Box className={styles.reviewsContainer}>
+                            <Typography color='textSecondary'>Reviews</Typography>
+                            <Typography color='#23856D'>(0)</Typography>
+                        </Box>
+                    </Box>
+                    <Divider/>
+                    <Box className={styles.productDetails}>
+                        <Box className={styles.productDetailsContent}>
+                            <Typography variant='h3'>
+                                the quick fox jumps over 
+                            </Typography>
+                            <Typography variant='subtitle1' color='textSecondary'>
+                                Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met.
+                            </Typography>
+                            <Typography variant='subtitle1' color='textSecondary'>
+                                Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met. 
+                            </Typography>
+                            <Typography variant='subtitle1' color='textSecondary'>
+                                Met minim Mollie non desert Alamo est sit cliquey dolor do met sent. RELIT official consequent door ENIM RELIT Mollie. Excitation venial consequent sent nostrum met. 
+                            </Typography>
+                        </Box>
+                        <Box className={styles.productDetailsImage}>
+                            <Image 
+                                src={productImages[0]} 
+                                alt={`product-thumbnail-0`}
+                                width={413}
+                                height={372}
+                                className={styles.productDetailsImage}
+                            />
+                        </Box>
+                    </Box>
+                </Box>
+                <Box className={styles.productsWrapper}>
+                    <Products/>
                 </Box>
                 <Sponsors/>
                 </>
