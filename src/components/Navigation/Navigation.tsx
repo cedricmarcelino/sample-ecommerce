@@ -1,17 +1,14 @@
 'use client'
 import { Box, Typography } from "@mui/material"
 import styles from './Navigation.module.css'
-import ReactDOM from 'react-dom';
-import { MutableRefObject, useEffect, useRef } from "react";
 import { ChevronDown } from "../Icons";
 
 interface NavigationProps {
     isVisible: boolean;
-    setIsVisible: Function;
 }
 
 export default function Navigation (props: NavigationProps) {
-    const { isVisible, setIsVisible } = props;
+    const { isVisible } = props;
     return ( 
         <>
             <Box className={styles.navMenuDesktop}>
