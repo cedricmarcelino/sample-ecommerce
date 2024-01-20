@@ -1,20 +1,21 @@
 'use client'
 import { Box, Typography } from "@mui/material"
 import styles from './Header.module.css'
-import { SearchIcon, CartIcon, HamburgerIcon, Close, Envelope, Phone, Youtube, Facebook, Twitter, Instagram, Heart, UserIcon } from "../Icons"
-import { useState } from "react"
+import { Envelope, Phone, Youtube, Facebook, Twitter, Instagram} from "../Icons"
 import Navigation from "../Navigation/Navigation"
 import React from "react"
 import { useRouter } from "next/navigation";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks"
 import { toggleCart } from "@/redux/features/cartSlice";
+import { toggleMenu } from "@/redux/features/hamburgerMenuSlice"
+import Actions from "../Actions/Actions"
 
 export default function Header() {
-    const [isVisible, setIsVisible] = useState(false)
+    const isHamburgermenuOpen: boolean = useAppSelector((state) => state.hamburgerMenuReducer.hamburgerMenu.isOpen)
     const router = useRouter()
     const dispatch = useAppDispatch();
     const isCartOpen = useAppSelector((state) => state.cartReducer.cart.isOpen)
-    const cartCount = useAppSelector((state) => state.cartReducer.cart.cartContents.length)
+
     
     if(isCartOpen){
         window.scrollTo(0, 0)
@@ -24,14 +25,7 @@ export default function Header() {
     const handleBrandClick = () => {
         router.push('/');
         dispatch(toggleCart(false))
-    }
-
-    const handleClick = () => {
-        setIsVisible(!isVisible)
-    }
-
-    const handleCartClick = () => {
-        dispatch(toggleCart(!isCartOpen))
+        dispatch(toggleMenu(false))
     }
     return (
         <Box>
@@ -70,29 +64,8 @@ export default function Header() {
                     <Typography variant='h3'>Bandage</Typography>
                 </Box>
                 <Box className={styles.actionsContainer}>
-                    <Navigation isVisible={isVisible}/>
-                    <Box className={styles.iconContainer}>
-                        <Box className={styles.loginContainer}>
-                            <UserIcon className={styles.userIcon}/>
-                            <Typography variant='h6' color='#23A6F0'>
-                                Login / Register
-                            </Typography>
-                        </Box>
-                        <SearchIcon className={styles.svgIcon}/>
-                        <Box className={styles.cartContainer} onClick={handleCartClick}>
-                            <CartIcon className={styles.cartIcon}/>
-                            <Typography variant='caption'>{cartCount}</Typography>
-                        </Box>
-                        {isVisible 
-                        ? 
-                        <Close className={styles.closeIcon} onClick={handleClick}/>
-                        :
-                        <HamburgerIcon className={styles.hamburgerIcon} onClick={handleClick}/>}
-                        <Box className={styles.favoritesContainer}>
-                            <Heart className={styles.heartIcon}/>
-                            <Typography variant='caption'>0</Typography>
-                        </Box>
-                    </Box>
+                    {!isHamburgermenuOpen && <Navigation/>}
+                    <Actions/>
                 </Box>
             </Box>
         </Box>

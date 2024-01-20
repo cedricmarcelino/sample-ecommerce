@@ -10,30 +10,6 @@
     z-index: 100;
 }
 
-.svgIcon {
-    width: 24px;
-}
-.cartContainer {
-    display: flex;
-    align-items: center;
-}
-.cartIcon {
-    width: 24px;
-    margin-right: 5px;
-}
-
-.hamburgerIcon {
-    width: 24px;
-}
-
-.closeIcon {
-    width: 24px;
-}
-
-.loginContainer {
-    display: none;
-}
-
 .brandNameContainer {
     height: 58px;
     width: 187px;
@@ -56,31 +32,11 @@
     align-items: center;
 }
 
-.favoritesContainer {
-    display: none;
+.actionsContainerAlt{
+    display: flex;
 }
 
 @media screen and (min-width: 1440px){
-    .userIcon{
-        width: 12px;
-        margin-right: 5px;
-    }
-    .loginContainer{
-        display: flex;
-        padding: 15px;
-    }
-    .cartContainer {
-        margin: 15px;
-    }
-    .favoritesContainer {
-        display: flex;
-        align-items: center;
-        margin: 15px;
-    }
-    .cartIcon {
-        width: 16px;
-        margin-right: 5px;
-    }
     .iconContainer {
         justify-content: end;
         width: auto;
@@ -90,23 +46,6 @@
     }
     .iconContainer :global(.MuiTypography-caption) {
         color: #23A6F0;
-    }
-    .hamburgerIcon {
-        display: none;
-    }
-    
-    .closeIcon {
-        display: none;
-    }
-
-    .heartIcon {
-        width: 16px;
-        margin-right: 5px;
-    }
-    
-    .svgIcon {
-        width: 16px;
-        margin: 15px;
     }
 
     .brandNameContainer {display: flex;

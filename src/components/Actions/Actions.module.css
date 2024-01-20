@@ -1,0 +1,90 @@
+.iconContainer {
+    display: flex;
+    align-items: center;
+    width: 155px;
+    justify-content: space-between;
+}
+
+.iconContainerAlt {
+    display: flex;
+    align-items: center;
+    width: 155px;
+    justify-content: flex-end;
+}
+
+.svgIcon {
+    width: 24px;
+}
+.cartContainer {
+    display: flex;
+    align-items: center;
+}
+.cartIcon {
+    width: 24px;
+    margin-right: 5px;
+}
+
+.loginContainer {
+    display: none;
+}
+
+.closeIcon {
+    width: 24px;
+}
+.hamburgerIcon {
+    width: 24px;
+}
+.favoritesContainer {
+    display: none;
+}
+
+
+@media screen and (min-width: 1440px){
+    .hamburgerIcon {
+        display: none;
+    }
+    
+    .closeIcon {
+        display: none;
+    }
+    .cartContainer {
+        margin: 15px;
+    }
+    .favoritesContainer {
+        display: flex;
+        align-items: center;
+        margin: 15px;
+    }
+
+    .heartIcon {
+        width: 16px;
+        margin-right: 5px;
+    }
+    .cartIcon {
+        width: 16px;
+        margin-right: 5px;
+    }
+    .userIcon{
+        width: 12px;
+        margin-right: 5px;
+    }
+    .iconContainer {
+        justify-content: end;
+        width: auto;
+    }
+    .iconContainer :global(path) {
+        fill: #23A6F0;
+    }
+    .iconContainer :global(.MuiTypography-caption) {
+        color: #23A6F0;
+    }
+    .loginContainer{
+        display: flex;
+        padding: 15px;
+    }
+    
+    .svgIcon {
+        width: 16px;
+        margin: 15px;
+    }
+}
