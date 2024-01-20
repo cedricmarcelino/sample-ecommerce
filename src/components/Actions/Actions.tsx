@@ -39,7 +39,7 @@ export default function Actions() {
                     </Box>
                 </>
             }
-            <Box className={styles.favoritesContainer}>
+            <Box className={styles.wishlistContainer}>
                 <Heart className={styles.heartIcon}/>
                 <Typography variant='caption'>0</Typography>
             </Box>

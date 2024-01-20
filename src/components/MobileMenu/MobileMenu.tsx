@@ -68,7 +68,7 @@ export default function MobileMenu() {
                         <CartIcon width={37}/>
                         <Typography variant='caption' color='#23A6F0'>{cartCount}</Typography>
                     </Box>
-                    <Box className={styles.favoritesContainer}>
+                    <Box className={styles.wishlistContainer}>
                         <Heart width={29}/>
                         <Typography variant='caption' color='#23A6F0'>0</Typography>
                     </Box>

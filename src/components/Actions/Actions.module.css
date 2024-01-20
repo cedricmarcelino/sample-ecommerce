@@ -34,7 +34,7 @@
 .hamburgerIcon {
     width: 24px;
 }
-.favoritesContainer {
+.wishlistContainer {
     display: none;
 }
 
@@ -50,7 +50,7 @@
     .cartContainer {
         margin: 15px;
     }
-    .favoritesContainer {
+    .wishlistContainer {
         display: flex;
         align-items: center;
         margin: 15px;
