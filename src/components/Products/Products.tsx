@@ -1,5 +1,5 @@
 'use client'
-import { Box, Typography, Button } from "@mui/material";
+import { Box, Typography, Button, Divider } from "@mui/material";
 import styles from './Products.module.css'
 import { addProducts } from "@/redux/features/productsSlice";
 import { useAppDispatch } from "@/redux/hooks";
@@ -39,7 +39,7 @@ export default function Products () {
               })
         } else {
             const width = checkWidth();
-            const initialLimit = (width<1440) ? 5 : 10
+            const initialLimit = (width<1440 && !(pathname.includes('/product/'))) ? 5 : 10
             setLimit(initialLimit);
         }
     }, [limit, dispatch])
@@ -52,17 +52,31 @@ export default function Products () {
     }
     return (
         <Box className={styles.productsContainer}>
-            <Box className={styles.labelContainer}>
-                <Typography variant='h4' color='textSecondary' className={styles.featuredLabel}>
-                    Featured Products
-                </Typography>
-                <Typography variant='h3'>
-                    BESTSELLER PRODUCTS
-                </Typography>
-                <Typography variant='subtitle1' color='textSecondary'>
-                    Problems trying to resolve the conflict between
-                </Typography>
-            </Box>
+            {(!(pathname.includes('/product/')))
+            ?
+            (
+                <Box className={styles.labelContainer}>
+                    <Typography variant='h4' color='textSecondary' className={styles.featuredLabel}>
+                        Featured Products
+                    </Typography>
+                    <Typography variant='h3'>
+                        BESTSELLER PRODUCTS
+                    </Typography>
+                    <Typography variant='subtitle1' color='textSecondary'>
+                        Problems trying to resolve the conflict between
+                    </Typography>
+                </Box>
+            )
+            :
+            (
+                <Box className={styles.labelContainerProductPage}>
+                    <Typography variant='h3'>
+                        BESTSELLER PRODUCTS
+                    </Typography>
+                    <Divider/>
+                </Box>
+            )
+            }
             <Box className={styles.productsListContainer}>
                 {sampleProducts.length > 0 ?
                 sampleProducts.map((product,index) => {

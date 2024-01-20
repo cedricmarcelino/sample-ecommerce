@@ -87,4 +87,12 @@
     .cardMedia{
         height: 238px;
     }
+
+    .labelContainerProductPage {
+        text-align: left;
+    }
+
+    .labelContainerProductPage :global(.MuiDivider-root) {
+        margin-top: 24px;
+    }
 }
