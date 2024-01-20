@@ -61,13 +61,15 @@ export const Product: React.FC<Props> = ({ product }) => {
                     <Box className={styles.product}>
                         <Box className={styles.photosContainer}>
                             <Box className={styles.mainImage}>
-                                <Image 
-                                    src={productImages[imageIndex]} 
-                                    alt={`product-thumbnail-${imageIndex}`}
-                                    width={348}
-                                    height={277}
-                                    className={styles.mainImage}
-                                />
+                                {productImages[imageIndex] && 
+                                    <Image 
+                                        src={productImages[imageIndex]} 
+                                        alt={`product-thumbnail-${imageIndex}`}
+                                        width={348}
+                                        height={277}
+                                        className={styles.mainImage}
+                                    />
+                                }
                                 {productImages.length > 1 &&
                                 <>
                                     <Chevron id={styles['left-chevron-image-navigation']} onClick={handleLeftClick}/>
