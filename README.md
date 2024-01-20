@@ -21,6 +21,6 @@ This is a simple e-commerce web application I made to showcase my knowledge and 
 6. lodash
 7. Typescript
 
-## Deploy on Vercel
+## Deployment
 
 You can access the deployed version here: https://sample-ecommerce-delta.vercel.app/
