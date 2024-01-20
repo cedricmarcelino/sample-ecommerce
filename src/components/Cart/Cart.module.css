@@ -1,6 +1,5 @@
 .cartContainer {
     margin-top: 104px;
-    min-height: calc(100vh - 104px);
     padding: 0px 18px 83px 18px;
 }
 
