@@ -3,6 +3,7 @@ import productsReducer from './features/productsSlice'
 import cartReducer from './features/cartSlice'
 import snackbarReducer from './features/snackbarSlice'
 import hamburgerMenuReducer from './features/hamburgerMenuSlice'
+import wishlistReducer from './features/wishlistSlice'
 
 export const makeStore = () => {
   return configureStore({
@@ -11,6 +12,7 @@ export const makeStore = () => {
       cartReducer,
       snackbarReducer,
       hamburgerMenuReducer,
+      wishlistReducer
     },
   })
 }
