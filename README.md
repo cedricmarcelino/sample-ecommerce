@@ -10,6 +10,9 @@ This is a simple e-commerce web application I made to showcase my knowledge and 
 4. You can increase and decrease the quantity of a product in your cart.
 5. The cart will show you the total price of the items in your cart.
 6. In the product's page the carousel for the images are functional as well.
+7. The web application work best on devices with a 414px width dimension and above.
+8. The design is responsive.
+9. Break-points for design are 414px for mobile and 1440px for desktop version.
 
 ## Techs use
 
