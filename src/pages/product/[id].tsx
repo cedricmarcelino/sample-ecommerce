@@ -7,12 +7,14 @@ import Cart from '@/components/Cart/Cart';
 import styles from './index.module.css'
 import { Box, Snackbar } from "@mui/material";
 import { useEffect } from 'react';
-import { CartContents, LOCAL_STORAGE_KEYS } from '@/types/types';
+import { CartContents, LOCAL_STORAGE_KEYS, WishlistContents } from '@/types/types';
 import { setCart, toggleCart } from '@/redux/features/cartSlice';
 import { getLocalStorage } from '@/utilities/utilities';
 import { closeSnackbar } from '@/redux/features/snackbarSlice';
 import MobileMenu from '@/components/MobileMenu/MobileMenu';
 import { toggleMenu } from '@/redux/features/hamburgerMenuSlice';
+import { setWishlist, toggleWishlist } from '@/redux/features/wishlistSlice';
+import Wishlist from '@/components/Wishlist/Wishlist';
 
   
 export async function getServerSideProps(context: GetServerSidePropsContext) {
@@ -28,6 +30,7 @@ export default function Page(props: IProduct)  {
     const dispatch = useAppDispatch()
     const isSnackbarOpen = useAppSelector((state) => state.snackbarReducer.snackbar.isOpen)
     const snackbarMessage = useAppSelector((state) => state.snackbarReducer.snackbar.message)
+    const isWishlistOpen = useAppSelector((state) => state.wishlistReducer.wishlist.isOpen)
 
     const handleSnackbarClose = () => {
       dispatch(closeSnackbar())
@@ -36,7 +39,10 @@ export default function Page(props: IProduct)  {
     useEffect(() => {
       // Initialize redux states:
       const cartContents: CartContents = JSON.parse(getLocalStorage(LOCAL_STORAGE_KEYS.CART) as string)
+      const wishlistContents: WishlistContents = JSON.parse(getLocalStorage(LOCAL_STORAGE_KEYS.WISHLIST) as string)
       dispatch(setCart(cartContents))
+      dispatch(setWishlist(wishlistContents))
+      dispatch(toggleWishlist(false))
       dispatch(toggleCart(false))
       dispatch(toggleMenu(false))
     }, [])
@@ -44,8 +50,9 @@ export default function Page(props: IProduct)  {
     return (
         <>
             {isCartOpen && <Cart/>}
+            {isWishlistOpen && <Wishlist/>}
             {isHamburgermenuOpen && <MobileMenu/>}
-            <Box className={(isCartOpen || isHamburgermenuOpen) ? styles.hideComponents : styles.showComponents} >
+            <Box className={(isCartOpen || isHamburgermenuOpen || isWishlistOpen) ? styles.hideComponents : styles.showComponents} >
                 <Product product={props}/>
             </Box>
             <Snackbar 

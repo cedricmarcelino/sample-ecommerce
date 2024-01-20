@@ -12,17 +12,20 @@ import styles from './index.module.css'
 import { useEffect } from 'react';
 import { useAppDispatch } from '@/redux/hooks';
 import { setCart, toggleCart } from '@/redux/features/cartSlice';
-import { CartContents, LOCAL_STORAGE_KEYS } from '@/types/types';
+import { CartContents, LOCAL_STORAGE_KEYS, WishlistContents } from '@/types/types';
 import { getLocalStorage } from '@/utilities/utilities';
 import { closeSnackbar } from '@/redux/features/snackbarSlice';
 import MobileMenu from '@/components/MobileMenu/MobileMenu';
 import { toggleMenu } from '@/redux/features/hamburgerMenuSlice';
+import { setWishlist, toggleWishlist } from '@/redux/features/wishlistSlice';
+import Wishlist from '@/components/Wishlist/Wishlist';
  
 export default function Page() {
   const isCartOpen = useAppSelector((state) => state.cartReducer.cart.isOpen)
   const isSnackbarOpen = useAppSelector((state) => state.snackbarReducer.snackbar.isOpen)
   const snackbarMessage = useAppSelector((state) => state.snackbarReducer.snackbar.message)
   const isHamburgermenuOpen = useAppSelector((state) => state.hamburgerMenuReducer.hamburgerMenu.isOpen)
+  const isWishlistOpen = useAppSelector((state) => state.wishlistReducer.wishlist.isOpen)
   const dispatch = useAppDispatch()
 
   const handleSnackbarClose = () => {
@@ -32,7 +35,10 @@ export default function Page() {
   useEffect(() => {
     // Initialize redux states:
     const cartContents: CartContents = JSON.parse(getLocalStorage(LOCAL_STORAGE_KEYS.CART) as string)
+    const wishlistContents: WishlistContents = JSON.parse(getLocalStorage(LOCAL_STORAGE_KEYS.WISHLIST) as string)
     dispatch(setCart(cartContents))
+    dispatch(setWishlist(wishlistContents))
+    dispatch(toggleWishlist(false))
     dispatch(toggleCart(false))
     dispatch(toggleMenu(false))
   }, [])
@@ -40,8 +46,9 @@ export default function Page() {
   return (
     <Box>
       {isCartOpen && <Cart/>}
+      {isWishlistOpen && <Wishlist/>}
       {isHamburgermenuOpen && <MobileMenu/>}
-      <Box className={(isCartOpen || isHamburgermenuOpen) ? styles.hideComponents : styles.showComponents}>
+      <Box className={(isCartOpen || isHamburgermenuOpen || isWishlistOpen) ? styles.hideComponents : styles.showComponents}>
         <Categories/>
         <Products/>
         <Services/>

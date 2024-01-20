@@ -9,6 +9,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks"
 import { toggleCart } from "@/redux/features/cartSlice";
 import { toggleMenu } from "@/redux/features/hamburgerMenuSlice"
 import Actions from "../Actions/Actions"
+import { toggleWishlist } from "@/redux/features/wishlistSlice"
 
 export default function Header() {
     const isHamburgermenuOpen: boolean = useAppSelector((state) => state.hamburgerMenuReducer.hamburgerMenu.isOpen)
@@ -26,6 +27,7 @@ export default function Header() {
         router.push('/');
         dispatch(toggleCart(false))
         dispatch(toggleMenu(false))
+        dispatch(toggleWishlist(false))
     }
     return (
         <Box>

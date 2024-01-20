@@ -12,6 +12,7 @@ import { useAppDispatch, useAppSelector } from "@/redux/hooks"
 import { CartContent, SNACKBAR_TYPES } from "@/types/types"
 import { setCart } from "@/redux/features/cartSlice"
 import { openSnackbar } from "@/redux/features/snackbarSlice"
+import { setWishlist } from "@/redux/features/wishlistSlice"
 var _ = require('lodash');
 
 
@@ -22,6 +23,7 @@ interface Props {
 export const Product: React.FC<Props> = ({ product }) => {
     const dispatch = useAppDispatch();
     const cart: CartContent[] = useAppSelector((state) => state.cartReducer.cart.cartContents)
+    const wishlist: IProduct[] = useAppSelector((state) => state.wishlistReducer.wishlist.wishlistContents)
     const colors = [
         '#23A6F0',
         '#2DC071',
@@ -53,8 +55,8 @@ export const Product: React.FC<Props> = ({ product }) => {
         }
     }
 
-    const isItemAddedToCart = () => {
-        if(cart.findIndex((cartContent) => cartContent.id === product?.id) < 0) {
+    const isItemAddedToCart = (list: CartContent[] | IProduct[]) => {
+        if(list.findIndex((item) => item.id === product?.id) < 0) {
             return false
         }
         return true
@@ -62,7 +64,7 @@ export const Product: React.FC<Props> = ({ product }) => {
 
     const handleCart = () => {
         const tempCart: CartContent[] = _.cloneDeep(cart);
-        if(!isItemAddedToCart()){
+        if(!isItemAddedToCart(cart)){
             const tempProduct: CartContent = _.cloneDeep(product)
             tempProduct.count = 1;
             tempCart.push(tempProduct);
@@ -79,6 +81,30 @@ export const Product: React.FC<Props> = ({ product }) => {
                 {
                     isOpen: true,
                     message: 'This product is already in your cart.',
+                    type: SNACKBAR_TYPES.INFO,
+                }
+            ))
+        }
+    }
+
+    const handleWishlist = () => {
+        const tempWishlist: IProduct[] = _.cloneDeep(wishlist);
+        if(!isItemAddedToCart(wishlist)){
+            const tempProduct: CartContent = _.cloneDeep(product)
+            tempWishlist.push(tempProduct);
+            dispatch(setWishlist({ wishlistContents: tempWishlist }))
+            dispatch(openSnackbar(
+                {
+                    isOpen: true,
+                    message: 'Product was added to your wishlist.',
+                    type: SNACKBAR_TYPES.SUCCESS,
+                }
+            ))
+        } else {
+            dispatch(openSnackbar(
+                {
+                    isOpen: true,
+                    message: 'This product is already in your wishlist.',
                     type: SNACKBAR_TYPES.INFO,
                 }
             ))
@@ -168,10 +194,10 @@ export const Product: React.FC<Props> = ({ product }) => {
                                 <Button variant='contained' className={styles.selectButton}>
                                     <Typography variant='h6' color='white'>Select Options</Typography>
                                 </Button>
-                                <Button variant='contained' className={styles.iconButton}>
+                                <Button variant='contained' className={styles.iconButton} onClick={handleWishlist} disabled={isItemAddedToCart(wishlist)}>
                                     <Heart width={20}/>
                                 </Button>
-                                <Button variant='contained' className={styles.iconButton} onClick={handleCart} disabled={isItemAddedToCart()}>
+                                <Button variant='contained' className={styles.iconButton} onClick={handleCart} disabled={isItemAddedToCart(cart)}>
                                     <CartIcon width={20}/>
                                 </Button>
                                 <Button variant='contained' className={styles.iconButton}>
