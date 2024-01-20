@@ -1,0 +1,62 @@
+.navLink{
+    font-size: 30px !important; 
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 45px !important;
+    letter-spacing: 0.2px!important;
+    color: #737373 !important;
+    margin-bottom: 30px !important;
+}
+
+.navMenu{
+    padding: 60px 0px 98px 0px;
+    margin-top: 104px;
+    left: 0px;
+    background-color: white;
+    text-align: center;
+}
+
+.navLink:last-child{
+    margin-bottom: 0px !important;
+}
+
+.loginLabel{
+    font-size: 30px !important;
+    font-style: normal !important;
+    font-weight: 400 !important;
+    line-height: 45px !important; /* 150% */
+    letter-spacing: 0.2px !important;
+    margin-left: 5px !important;
+}
+
+.navMenu :global(path) {
+    fill: #23A6F0
+}
+
+.loginContainer {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.cartContainer {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px;
+    align-items: center;
+}
+
+.cartContainer :global(.MuiTypography-root){
+    margin-left: 5px
+}
+
+.favoritesContainer {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0px;
+    align-items: center;
+}
+
+.favoritesContainer :global(.MuiTypography-root){
+    margin-left: 5px
+}

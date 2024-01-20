@@ -8,9 +8,11 @@ import styles from './index.module.css'
 import { Box, Snackbar } from "@mui/material";
 import { useEffect } from 'react';
 import { CartContents, LOCAL_STORAGE_KEYS } from '@/types/types';
-import { setCart } from '@/redux/features/cartSlice';
+import { setCart, toggleCart } from '@/redux/features/cartSlice';
 import { getLocalStorage } from '@/utilities/utilities';
 import { closeSnackbar } from '@/redux/features/snackbarSlice';
+import MobileMenu from '@/components/MobileMenu/MobileMenu';
+import { toggleMenu } from '@/redux/features/hamburgerMenuSlice';
 
   
 export async function getServerSideProps(context: GetServerSidePropsContext) {
@@ -22,6 +24,7 @@ return { props: product };
 
 export default function Page(props: IProduct)  {
     const isCartOpen = useAppSelector((state) => state.cartReducer.cart.isOpen)
+    const isHamburgermenuOpen = useAppSelector((state) => state.hamburgerMenuReducer.hamburgerMenu.isOpen)
     const dispatch = useAppDispatch()
     const isSnackbarOpen = useAppSelector((state) => state.snackbarReducer.snackbar.isOpen)
     const snackbarMessage = useAppSelector((state) => state.snackbarReducer.snackbar.message)
@@ -34,12 +37,15 @@ export default function Page(props: IProduct)  {
       // Initialize redux states:
       const cartContents: CartContents = JSON.parse(getLocalStorage(LOCAL_STORAGE_KEYS.CART) as string)
       dispatch(setCart(cartContents))
+      dispatch(toggleCart(false))
+      dispatch(toggleMenu(false))
     }, [])
 
     return (
         <>
             {isCartOpen && <Cart/>}
-            <Box className={isCartOpen ? styles.hideComponents : styles.showComponents} >
+            {isHamburgermenuOpen && <MobileMenu/>}
+            <Box className={(isCartOpen || isHamburgermenuOpen) ? styles.hideComponents : styles.showComponents} >
                 <Product product={props}/>
             </Box>
             <Snackbar 

@@ -3,12 +3,7 @@ import { Box, Typography } from "@mui/material"
 import styles from './Navigation.module.css'
 import { ChevronDown } from "../Icons";
 
-interface NavigationProps {
-    isVisible: boolean;
-}
-
-export default function Navigation (props: NavigationProps) {
-    const { isVisible } = props;
+export default function Navigation () {
     return ( 
         <>
             <Box className={styles.navMenuDesktop}>
@@ -34,21 +29,6 @@ export default function Navigation (props: NavigationProps) {
                     Pages
                 </Typography>
             </Box>
-            {isVisible &&
-            <Box className={styles.navMenu}>
-                <Typography className={styles.navLink}>
-                    Home
-                </Typography>
-                <Typography className={styles.navLink}>
-                    Product
-                </Typography>
-                <Typography className={styles.navLink}>
-                    Pricing
-                </Typography>
-                <Typography className={styles.navLink}>
-                    Contact
-                </Typography>
-            </Box>}
         </>
     )
 }
