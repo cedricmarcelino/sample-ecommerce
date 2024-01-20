@@ -1,5 +1,5 @@
 import { CartContent, CartContents, LOCAL_STORAGE_KEYS } from '@/types/types';
-import { getLocalStorage, setLocalStorage } from '@/utilities/utilities';
+import { setLocalStorage } from '@/utilities/utilities';
 import {createSlice, PayloadAction} from '@reduxjs/toolkit';
 
 
