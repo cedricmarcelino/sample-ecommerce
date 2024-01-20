@@ -5,6 +5,9 @@
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
+}
+
+.wrapper {
     background-color: #FAFAFA;
 }
 
@@ -13,4 +16,19 @@
     margin: auto;
     margin-bottom: 60px;
     padding-right: 5px;
+}
+
+@media screen and (min-width: 1440px){
+    .sponsorsContainer{
+        padding: 50px 0px;
+        width: 1054px;
+        margin: auto;
+    }
+
+    .sponsorsContainer :global(svg) {
+        width: 100px;
+        margin: auto;
+        margin-bottom: 60px;
+        padding-right: 5px;
+    }
 }

@@ -4,13 +4,15 @@ import styles from './Sponsors.module.css'
 
 export default function Sponsors() {
     return (
-        <Box className={styles.sponsorsContainer}>
-            <Hooli/>
-            <Lyft/>
-            <PiedPiperHat/>
-            <Stripe/>
-            <Aws/>
-            <Reddit/>
+        <Box className={styles.wrapper}>
+            <Box className={styles.sponsorsContainer}>
+                <Hooli/>
+                <Lyft/>
+                <PiedPiperHat/>
+                <Stripe/>
+                <Aws/>
+                <Reddit/>
+            </Box>
         </Box>
     )
 }
