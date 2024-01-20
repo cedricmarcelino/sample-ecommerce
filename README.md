@@ -1,36 +1,26 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Introduction
 
-## Getting Started
+This is a simple e-commerce web application I made to showcase my knowledge and skills in creating web applications based on a given design. This is not a fully functional website, most of the contents are static but the featured products section of the page is dynamic and fetching its data from a REST API.
 
-First, run the development server:
+## Functionalities
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+1. You will be able to add and remove products from your wishlist and your cart.
+2. You will be able to load more products from the initial pagination.
+3. You will be able to click on a product and it will lead you to a new page containing the product's information.
+4. You can increase and decrease the quantity of a product in your cart.
+5. The cart will show you the total price of the items in your cart.
+6. In the product's page the carousel for the images are functional as well.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Techs use
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. NextJS (Page Router)
+2. Material UI
+3. Redux Toolkit
+4. DummyJSON Rest API
+5. Vercel Deployment
+6. lodash
+7. Typescript
 
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+You can access the deployed version here: https://sample-ecommerce-delta.vercel.app/
