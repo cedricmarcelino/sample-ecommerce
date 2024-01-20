@@ -8,7 +8,7 @@ import { useEffect, useState} from "react";
 import Card from "@mui/material/Card"
 import CardContent from "@mui/material/CardContent"
 import CardMedia from "@mui/material/CardMedia"
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 var _ = require('lodash');
 
 export default function Products () {
@@ -18,6 +18,7 @@ export default function Products () {
     const [total, setTotal] = useState(0)
     const [isDisabled, setIsDisabled] = useState(false)
     const router = useRouter();
+    const pathname = usePathname()
 
     const checkWidth = () => {
         return window.innerWidth;
@@ -97,7 +98,7 @@ export default function Products () {
                 <Typography>We are unable to load our products, please try again later.</Typography>
                 }
             </Box>
-            {(sampleProducts.length > 0 && sampleProducts.length < total)  && (
+            {(sampleProducts.length > 0 && sampleProducts.length < total && !(pathname.includes('/product/')))  && (
                 <Button disabled={isDisabled} className={styles.loadButton} variant='outlined' onClick={handleClick}>
                     <Typography color='#23A6F0' variant='button'>
                         LOAD MORE PRODUCTS
