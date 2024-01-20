@@ -17,7 +17,7 @@ export default function Header() {
     const isCartOpen = useAppSelector((state) => state.cartReducer.cart.isOpen)
 
     
-    if(isCartOpen){
+    if(isCartOpen || isHamburgermenuOpen){
         window.scrollTo(0, 0)
     }
 
