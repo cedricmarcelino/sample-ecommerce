@@ -73,7 +73,7 @@ export default function Products () {
                             <CardMedia
                                 component='img'
                                 image={product.images[0]}
-                                title="green iguana"
+                                title={_.startCase(product.title)}
                                 className={styles.cardMedia}
                             />
                             <CardContent className={styles.cardContent}>
