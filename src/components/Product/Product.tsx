@@ -5,8 +5,9 @@ import styles from './Product.module.css'
 import { Chevron, Heart, CartIcon, Eye } from "../Icons"
 import Sponsors from "../Sponsors/Sponsors"
 import Image from 'next/image'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Products from "../Products/Products"
+import { usePathname } from "next/navigation"
 var _ = require('lodash');
 
 
@@ -23,7 +24,12 @@ export const Product: React.FC<Props> = ({ product }) => {
     ]
     const productImages: string[] = []
     const [imageIndex, setImageIndex] = useState(0)
+    const pathname = usePathname()
     product?.images.map((value) => productImages.push(value))
+
+    useEffect(() => {
+        setImageIndex(0)
+    }, [pathname])
 
     const handleRightClick = () => {
         if(imageIndex+1 < 3){

@@ -12,7 +12,6 @@ return { props: product };
 }
 
 export default function Page(props: IProduct)  {
-    // console.log(props);
     return (
         <Product product={props}/>
     )
