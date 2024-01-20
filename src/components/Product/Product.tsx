@@ -171,7 +171,7 @@ export const Product: React.FC<Props> = ({ product }) => {
                                 <Button variant='contained' className={styles.iconButton}>
                                     <Heart width={20}/>
                                 </Button>
-                                <Button variant='contained' className={styles.iconButton} onClick={handleCart}>
+                                <Button variant='contained' className={styles.iconButton} onClick={handleCart} disabled={isItemAddedToCart()}>
                                     <CartIcon width={20}/>
                                 </Button>
                                 <Button variant='contained' className={styles.iconButton}>
