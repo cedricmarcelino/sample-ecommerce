@@ -13,11 +13,11 @@ export default function MyApp({ Component, pageProps }: AppProps) {
   return (
     <>
     <StoreProvider>
-    <AppCacheProvider {...pageProps}>
-      <ThemeProvider theme={theme}>
-      <Component {...pageProps} />
-      </ThemeProvider>
-    </AppCacheProvider>
+      <AppCacheProvider {...pageProps}>
+        <ThemeProvider theme={theme}>
+          <Component {...pageProps} />
+        </ThemeProvider>
+      </AppCacheProvider>
     </StoreProvider>
     </>
   )

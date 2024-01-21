@@ -49,25 +49,25 @@ export default function Page() {
 
   return (
     <Layout>
-    <Box>
-      {isCartOpen && <Cart/>}
-      {isWishlistOpen && <Wishlist/>}
-      {isHamburgermenuOpen && <MobileMenu/>}
-      <Box className={(isCartOpen || isHamburgermenuOpen || isWishlistOpen) ? styles.hideComponents : styles.showComponents}>
-        <Categories/>
-        <Products/>
-        <Services/>
-        <Posts/>
-        <Testimonials/>
-        <Banner/>
-        <Snackbar 
-          open={isSnackbarOpen}
-          autoHideDuration={2000}
-          onClose={handleSnackbarClose}
-          message={snackbarMessage}
-        />
+      <Box>
+        {isCartOpen && <Cart/>}
+        {isWishlistOpen && <Wishlist/>}
+        {isHamburgermenuOpen && <MobileMenu/>}
+        <Box className={(isCartOpen || isHamburgermenuOpen || isWishlistOpen) ? styles.hideComponents : styles.showComponents}>
+          <Categories/>
+          <Products/>
+          <Services/>
+          <Posts/>
+          <Testimonials/>
+          <Banner/>
+          <Snackbar 
+            open={isSnackbarOpen}
+            autoHideDuration={2000}
+            onClose={handleSnackbarClose}
+            message={snackbarMessage}
+          />
+        </Box>
       </Box>
-    </Box>
-        </Layout>
+    </Layout>
   )
 }
