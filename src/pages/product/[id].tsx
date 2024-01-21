@@ -51,7 +51,7 @@ export default function Page(props: IProduct)  {
     }, [])
 
     return (
-        <>
+        <Layout>
             {isCartOpen && <Cart/>}
             {isWishlistOpen && <Wishlist/>}
             {isHamburgermenuOpen && <MobileMenu/>}
@@ -65,20 +65,6 @@ export default function Page(props: IProduct)  {
             message={snackbarMessage}
             anchorOrigin={{ vertical: 'bottom', horizontal: 'right'}}
             />
-        </>
+        </Layout>
     )
 }
-
-Page.getLayout = function getLayout(page: React.ReactNode) {
-    return (
-    <>
-    <AppCacheProvider>
-    <ThemeRegistry options={{ key: 'mui-theme' }}>
-        <Layout>
-            {page}
-        </Layout>
-      </ThemeRegistry>
-      </AppCacheProvider>
-    </>
-    )
-  }

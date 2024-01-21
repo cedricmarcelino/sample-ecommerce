@@ -48,6 +48,7 @@ export default function Page() {
   }, [])
 
   return (
+    <Layout>
     <Box>
       {isCartOpen && <Cart/>}
       {isWishlistOpen && <Wishlist/>}
@@ -67,20 +68,6 @@ export default function Page() {
         />
       </Box>
     </Box>
-  )
-}
- 
-Page.getLayout = function getLayout(page: React.ReactNode) {
-  return (
-  <>
-  <AppCacheProvider>
-    
-    <ThemeRegistry options={{ key: 'mui-theme' }}>
-        <Layout>
-            {page}
         </Layout>
-        </ThemeRegistry>
-      </AppCacheProvider>
-  </>
   )
 }

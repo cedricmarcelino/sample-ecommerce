@@ -6,12 +6,10 @@ import styles from './Layout.module.css'
 
 export default function Layout({children}: {children: React.ReactNode}) {
   return (
-    <StoreProvider>
-          <Box className={styles.pageWrapper}>
-            <Header/>
-            {children}
-            <Footer/>
-          </Box>
-    </StoreProvider>
+    <Box className={styles.pageWrapper}>
+      <Header/>
+      {children}
+      <Footer/>
+    </Box>
   )
 }
