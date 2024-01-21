@@ -17,6 +17,7 @@ import { setWishlist, toggleWishlist } from '@/redux/features/wishlistSlice';
 import Wishlist from '@/components/Wishlist/Wishlist';
 import theme from '@/theme';
 import { AppCacheProvider } from '@mui/material-nextjs/v14-pagesRouter';
+import ThemeRegistry from '@/utilities/ThemeRegistry';
 
   
 export async function getServerSideProps(context: GetServerSidePropsContext) {
@@ -72,11 +73,11 @@ Page.getLayout = function getLayout(page: React.ReactNode) {
     return (
     <>
     <AppCacheProvider>
-      <ThemeProvider theme={theme}>
-      <Layout>
-          {page}
-      </Layout>
-        </ThemeProvider>
+    <ThemeRegistry options={{ key: 'mui-theme' }}>
+        <Layout>
+            {page}
+        </Layout>
+      </ThemeRegistry>
       </AppCacheProvider>
     </>
     )

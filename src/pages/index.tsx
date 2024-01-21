@@ -22,6 +22,7 @@ import Wishlist from '@/components/Wishlist/Wishlist';
 import { AppCacheProvider } from '@mui/material-nextjs/v14-pagesRouter';
 import { ThemeProvider } from '@emotion/react';
 import theme from '@/theme';
+import ThemeRegistry from '@/utilities/ThemeRegistry';
  
 export default function Page() {
   const isCartOpen = useAppSelector((state) => state.cartReducer.cart.isOpen)
@@ -73,11 +74,12 @@ Page.getLayout = function getLayout(page: React.ReactNode) {
   return (
   <>
   <AppCacheProvider>
-    <ThemeProvider theme={theme}>
+    
+    <ThemeRegistry options={{ key: 'mui-theme' }}>
         <Layout>
             {page}
         </Layout>
-        </ThemeProvider>
+        </ThemeRegistry>
       </AppCacheProvider>
   </>
   )
