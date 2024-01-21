@@ -13,6 +13,7 @@ This is a simple e-commerce web application I made to showcase my knowledge and 
 7. The web application work best on devices with a 414px width dimension and above.
 8. The design is responsive.
 9. Break-points for design are 414px for mobile and 1440px for desktop version.
+10. The cart and wishlist data are persistent. It is saved in the machine's local storage.
 
 ## Techs use
 
