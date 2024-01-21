@@ -11,6 +11,10 @@
     margin-top: 36px;
 }
 
+.productImage {
+    cursor: pointer;
+}
+
 .iconButton {
     min-width: 0px !important;
     width: 20px;

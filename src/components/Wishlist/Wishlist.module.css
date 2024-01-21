@@ -10,6 +10,9 @@
 .wishlistContentsContainer {
     margin-top: 36px;
 }
+.productImage {
+    cursor: pointer;
+}
 
 .productContentContainer > * {
     margin-bottom: 8px !important;

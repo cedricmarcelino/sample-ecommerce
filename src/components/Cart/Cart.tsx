@@ -4,7 +4,8 @@ import { CartContent } from "@/types/types";
 import Image from 'next/image';
 import { Minus, Plus } from "../Icons";
 import { useAppDispatch, useAppSelector } from "@/redux/hooks";
-import { setCart } from "@/redux/features/cartSlice";
+import { setCart, toggleCart } from "@/redux/features/cartSlice";
+import router from "next/router";
 var _ = require('lodash');
 
 export default function Cart() {
@@ -17,6 +18,10 @@ export default function Cart() {
         })
         return _.round(totalPrice,2)
     }
+    const handleNavigate = (id: string | number) => {
+        router.push(`/product/${id}`);
+        dispatch(toggleCart(false))
+    };
 
     const incrementCount = (cartContentId: number) => {
         const tempCart: CartContent[] = _.cloneDeep(cart);
@@ -55,6 +60,9 @@ export default function Cart() {
                                             width={150}
                                             height={150}
                                             className={styles.productImage}
+                                            onClick={() => {
+                                                handleNavigate(cartContent.id)
+                                            }}
                                     />
                                     <Box className={styles.productContentContainer}>
                                         <Typography variant='h4' color='#8D8D8D'>{_.startCase(cartContent.title)}</Typography>
