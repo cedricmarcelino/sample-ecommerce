@@ -1,4 +1,3 @@
-import StoreProvider from '@/redux/StoreProvider'
 import Header from '../Header/Header'
 import Footer from '../Footer/Footer'
 import { Box } from "@mui/material";

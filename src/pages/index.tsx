@@ -19,10 +19,6 @@ import MobileMenu from '@/components/MobileMenu/MobileMenu';
 import { toggleMenu } from '@/redux/features/hamburgerMenuSlice';
 import { setWishlist, toggleWishlist } from '@/redux/features/wishlistSlice';
 import Wishlist from '@/components/Wishlist/Wishlist';
-import { AppCacheProvider } from '@mui/material-nextjs/v14-pagesRouter';
-import { ThemeProvider } from '@emotion/react';
-import theme from '@/theme';
-import ThemeRegistry from '@/utilities/ThemeRegistry';
  
 export default function Page() {
   const isCartOpen = useAppSelector((state) => state.cartReducer.cart.isOpen)
