@@ -25,6 +25,7 @@ export const cart = createSlice({
     reducers: {
         toggleCart: (state, action: PayloadAction<Boolean>) => {
             state.cart.isOpen = action.payload
+            window.scrollTo(0, 0)
         },
         setCart: (state, action: PayloadAction<CartContents>) => {
             state.cart.cartContents = action.payload.cartContents

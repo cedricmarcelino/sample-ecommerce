@@ -26,6 +26,7 @@ export const wishlist = createSlice({
     reducers: {
         toggleWishlist: (state, action: PayloadAction<Boolean>) => {
             state.wishlist.isOpen = action.payload
+            window.scrollTo(0, 0)
         },
         setWishlist: (state, action: PayloadAction<WishlistContents>) => {
             state.wishlist.wishlistContents = action.payload.wishlistContents

@@ -21,6 +21,9 @@ export const hamburgerMenu = createSlice({
     reducers: {
         toggleMenu: (state, action: PayloadAction<boolean>) => {
             state.hamburgerMenu.isOpen = action.payload
+            if(action.payload){
+                window.scrollTo(0, 0)
+            }
         },
     }
 })

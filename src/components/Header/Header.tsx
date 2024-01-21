@@ -15,13 +15,6 @@ export default function Header() {
     const isHamburgermenuOpen: boolean = useAppSelector((state) => state.hamburgerMenuReducer.hamburgerMenu.isOpen)
     const router = useRouter()
     const dispatch = useAppDispatch();
-    const isCartOpen = useAppSelector((state) => state.cartReducer.cart.isOpen)
-
-    
-    if(isCartOpen || isHamburgermenuOpen){
-        window.scrollTo(0, 0)
-    }
-
 
     const handleBrandClick = () => {
         router.push('/');
