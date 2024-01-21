@@ -44,10 +44,13 @@ export default function Page(props: IProduct)  {
       const wishlistContents: WishlistContents = JSON.parse(getLocalStorage(LOCAL_STORAGE_KEYS.WISHLIST) as string)
       dispatch(setCart(cartContents))
       dispatch(setWishlist(wishlistContents))
+    }, [])
+  
+    useEffect(() => {
       dispatch(toggleWishlist(false))
       dispatch(toggleCart(false))
       dispatch(toggleMenu(false))
-    }, [])
+    }, [props])
 
     return (
         <>
