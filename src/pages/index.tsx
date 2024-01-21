@@ -19,9 +19,6 @@ import MobileMenu from '@/components/MobileMenu/MobileMenu';
 import { toggleMenu } from '@/redux/features/hamburgerMenuSlice';
 import { setWishlist, toggleWishlist } from '@/redux/features/wishlistSlice';
 import Wishlist from '@/components/Wishlist/Wishlist';
-import { AppCacheProvider } from '@mui/material-nextjs/v14-pagesRouter';
-import { ThemeProvider } from '@emotion/react';
-import theme from '@/theme';
  
 export default function Page() {
   const isCartOpen = useAppSelector((state) => state.cartReducer.cart.isOpen)
@@ -47,38 +44,26 @@ export default function Page() {
   }, [])
 
   return (
-    <Box>
-      {isCartOpen && <Cart/>}
-      {isWishlistOpen && <Wishlist/>}
-      {isHamburgermenuOpen && <MobileMenu/>}
-      <Box className={(isCartOpen || isHamburgermenuOpen || isWishlistOpen) ? styles.hideComponents : styles.showComponents}>
-        <Categories/>
-        <Products/>
-        <Services/>
-        <Posts/>
-        <Testimonials/>
-        <Banner/>
-        <Snackbar 
-          open={isSnackbarOpen}
-          autoHideDuration={2000}
-          onClose={handleSnackbarClose}
-          message={snackbarMessage}
-        />
+    <Layout>
+      <Box>
+        {isCartOpen && <Cart/>}
+        {isWishlistOpen && <Wishlist/>}
+        {isHamburgermenuOpen && <MobileMenu/>}
+        <Box className={(isCartOpen || isHamburgermenuOpen || isWishlistOpen) ? styles.hideComponents : styles.showComponents}>
+          <Categories/>
+          <Products/>
+          <Services/>
+          <Posts/>
+          <Testimonials/>
+          <Banner/>
+          <Snackbar 
+            open={isSnackbarOpen}
+            autoHideDuration={2000}
+            onClose={handleSnackbarClose}
+            message={snackbarMessage}
+          />
+        </Box>
       </Box>
-    </Box>
-  )
-}
- 
-Page.getLayout = function getLayout(page: React.ReactNode) {
-  return (
-  <>
-  <AppCacheProvider>
-    <ThemeProvider theme={theme}>
-        <Layout>
-            {page}
-        </Layout>
-        </ThemeProvider>
-      </AppCacheProvider>
-  </>
+    </Layout>
   )
 }

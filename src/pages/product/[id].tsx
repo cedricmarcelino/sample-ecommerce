@@ -5,7 +5,7 @@ import { GetServerSidePropsContext } from 'next/types';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import Cart from '@/components/Cart/Cart';
 import styles from './index.module.css'
-import { Box, Snackbar, ThemeProvider } from "@mui/material";
+import { Box, Snackbar } from "@mui/material";
 import { useEffect } from 'react';
 import { CartContents, LOCAL_STORAGE_KEYS, WishlistContents } from '@/types/types';
 import { setCart, toggleCart } from '@/redux/features/cartSlice';
@@ -15,8 +15,6 @@ import MobileMenu from '@/components/MobileMenu/MobileMenu';
 import { toggleMenu } from '@/redux/features/hamburgerMenuSlice';
 import { setWishlist, toggleWishlist } from '@/redux/features/wishlistSlice';
 import Wishlist from '@/components/Wishlist/Wishlist';
-import theme from '@/theme';
-import { AppCacheProvider } from '@mui/material-nextjs/v14-pagesRouter';
 
   
 export async function getServerSideProps(context: GetServerSidePropsContext) {
@@ -53,7 +51,7 @@ export default function Page(props: IProduct)  {
     }, [props])
 
     return (
-        <>
+        <Layout>
             {isCartOpen && <Cart/>}
             {isWishlistOpen && <Wishlist/>}
             {isHamburgermenuOpen && <MobileMenu/>}
@@ -67,20 +65,6 @@ export default function Page(props: IProduct)  {
             message={snackbarMessage}
             anchorOrigin={{ vertical: 'bottom', horizontal: 'right'}}
             />
-        </>
+        </Layout>
     )
 }
-
-Page.getLayout = function getLayout(page: React.ReactNode) {
-    return (
-    <>
-    <AppCacheProvider>
-      <ThemeProvider theme={theme}>
-      <Layout>
-          {page}
-      </Layout>
-        </ThemeProvider>
-      </AppCacheProvider>
-    </>
-    )
-  }
