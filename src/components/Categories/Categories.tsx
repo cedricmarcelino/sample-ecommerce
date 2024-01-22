@@ -33,7 +33,7 @@ export default function Categories(){
                 return (
                     <Card key={index} className={styles.card} sx={{backgroundImage: `url(${content.image})`}}>
                         <CardContent className={styles.cardContent}>
-                            <Typography variant='h6' className={styles.item}>
+                            <Typography variant='h6' className={styles.item} color='#2DC071'>
                                 {content.items} items
                             </Typography>
                             <Typography variant='h3' className={styles.label}>
