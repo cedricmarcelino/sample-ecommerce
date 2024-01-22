@@ -1,5 +1,4 @@
 import Banner from '@/components/Banner/Banner';
-import Layout from '../components/RootLayout/Layout'
 import Categories from '@/components/Categories/Categories';
 import Posts from '@/components/Posts/Posts';
 import Products from '@/components/Products/Products';
@@ -44,26 +43,24 @@ export default function Page() {
   }, [])
 
   return (
-    <Layout>
-      <Box>
-        {isCartOpen && <Cart/>}
-        {isWishlistOpen && <Wishlist/>}
-        {isHamburgermenuOpen && <MobileMenu/>}
-        <Box className={(isCartOpen || isHamburgermenuOpen || isWishlistOpen) ? styles.hideComponents : styles.showComponents}>
-          <Categories/>
-          <Products/>
-          <Services/>
-          <Posts/>
-          <Testimonials/>
-          <Banner/>
-          <Snackbar 
-            open={isSnackbarOpen}
-            autoHideDuration={2000}
-            onClose={handleSnackbarClose}
-            message={snackbarMessage}
-          />
-        </Box>
+    <Box>
+      {isCartOpen && <Cart/>}
+      {isWishlistOpen && <Wishlist/>}
+      {isHamburgermenuOpen && <MobileMenu/>}
+      <Box className={(isCartOpen || isHamburgermenuOpen || isWishlistOpen) ? styles.hideComponents : styles.showComponents}>
+        <Categories/>
+        <Products/>
+        <Services/>
+        <Posts/>
+        <Testimonials/>
+        <Banner/>
+        <Snackbar 
+          open={isSnackbarOpen}
+          autoHideDuration={2000}
+          onClose={handleSnackbarClose}
+          message={snackbarMessage}
+        />
       </Box>
-    </Layout>
+    </Box>
   )
 }

@@ -1,6 +1,5 @@
 import Product from '@/components/Product/Product'
 import { Product as IProduct } from '@/redux/features/productsSlice'
-import Layout from '@/components/RootLayout/Layout'
 import { GetServerSidePropsContext } from 'next/types';
 import { useAppDispatch, useAppSelector } from '@/redux/hooks';
 import Cart from '@/components/Cart/Cart';
@@ -51,20 +50,20 @@ export default function Page(props: IProduct)  {
     }, [props])
 
     return (
-        <Layout>
-            {isCartOpen && <Cart/>}
-            {isWishlistOpen && <Wishlist/>}
-            {isHamburgermenuOpen && <MobileMenu/>}
-            <Box className={(isCartOpen || isHamburgermenuOpen || isWishlistOpen) ? styles.hideComponents : styles.showComponents} >
-                <Product product={props}/>
-            </Box>
-            <Snackbar 
-            open={isSnackbarOpen}
-            autoHideDuration={6000}
-            onClose={handleSnackbarClose}
-            message={snackbarMessage}
-            anchorOrigin={{ vertical: 'bottom', horizontal: 'right'}}
-            />
-        </Layout>
+      <>
+        {isCartOpen && <Cart/>}
+        {isWishlistOpen && <Wishlist/>}
+        {isHamburgermenuOpen && <MobileMenu/>}
+        <Box className={(isCartOpen || isHamburgermenuOpen || isWishlistOpen) ? styles.hideComponents : styles.showComponents} >
+            <Product product={props}/>
+        </Box>
+        <Snackbar 
+        open={isSnackbarOpen}
+        autoHideDuration={6000}
+        onClose={handleSnackbarClose}
+        message={snackbarMessage}
+        anchorOrigin={{ vertical: 'bottom', horizontal: 'right'}}
+        />
+      </>
     )
 }
